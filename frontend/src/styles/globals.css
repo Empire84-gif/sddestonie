@@ -1,6 +1,6 @@
 @font-face {
   font-family: "LatoLocal";
-  src: url("../assets/fonts/lato.ttf") format("truetype");
+  src: url("/fonts/lato.ttf") format("truetype");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -8,7 +8,7 @@
 
 @font-face {
   font-family: "OutfitLocal";
-  src: url("../assets/fonts/outfit.ttf") format("truetype");
+  src: url("/fonts/outfit.ttf") format("truetype");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
