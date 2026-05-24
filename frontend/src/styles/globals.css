@@ -8446,3 +8446,21 @@ body.mobile-menu-open .scroll-to-top {
     scroll-margin-top: 10px;
   }
 }
+
+/* =========================================================
+   PROJECTS PAGE — MOBILE PREVIEW TITLE POSITION
+========================================================= */
+
+@media (max-width: 760px) {
+  .projects-showcase-section__preview > h3 {
+    transform: translateY(25px);
+    padding-bottom: 20px;
+  }
+}
+
+@media (max-width: 420px) {
+  .projects-showcase-section__preview > h3 {
+    transform: translateY(29px);
+    padding-bottom: 20px;
+  }
+}
