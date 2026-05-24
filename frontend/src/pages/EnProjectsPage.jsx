@@ -516,10 +516,6 @@ function EnProjectsPage() {
                 ))}
               </div>
 
-              <div className="projects-showcase-section__continue">
-                <span>Full description continues below the image</span>
-                <ArrowDown size={18} />
-              </div>
             </div>
 
             <div
