@@ -516,10 +516,6 @@ function EeProjectsPage() {
                 ))}
               </div>
 
-              <div className="projects-showcase-section__continue">
-                <span>Kirjeldus jätkub pildi all</span>
-                <ArrowDown size={18} />
-              </div>
             </div>
 
             <div
