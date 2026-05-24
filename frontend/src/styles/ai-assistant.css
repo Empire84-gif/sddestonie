@@ -55,13 +55,13 @@
   overflow: hidden;
 }
 
-.sde-ai-launcher__avatar img,
-.sde-ai-panel__avatar img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: center;
-  transform: none;
+.sde-ai-launcher__avatar img {
+  width: 105%;
+  height: 105%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+  transform: translateY(-1px);
 }
 
 .sde-ai-launcher__copy {
@@ -70,26 +70,28 @@
   align-items: flex-start;
   gap: 1px;
 
-  font-family: "Outfit", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    sans-serif;
+  font-family: "OutfitLocal", "LatoLocal", system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
   line-height: 1.1;
   white-space: nowrap;
 }
 
 .sde-ai-launcher__copy strong {
   font-size: 12.8px;
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: -0.015em;
   color: #050505;
 }
 
 .sde-ai-launcher__copy span {
   font-size: 10.8px;
-  font-weight: 400;
+  font-weight: 500;
   color: rgba(0, 0, 0, 0.56);
 }
 
-/* ================= Panel ================= */
+/* =========================
+   PANEL
+========================= */
 
 .sde-ai-panel {
   position: fixed;
@@ -98,7 +100,7 @@
   z-index: 9991;
 
   width: min(420px, calc(100vw - 32px));
-  height: min(680px, calc(100vh - 124px));
+  height: min(680px, calc(100svh - var(--header-height) - 120px));
 
   display: flex;
   flex-direction: column;
@@ -111,6 +113,7 @@
   box-shadow: 0 34px 90px rgba(0, 0, 0, 0.22);
 
   overflow: hidden;
+  overscroll-behavior: contain;
   animation: sdeAiPanelIn 0.22s ease both;
 }
 
@@ -129,6 +132,8 @@
 .sde-ai-panel__header {
   position: relative;
   z-index: 2;
+
+  flex: 0 0 auto;
 
   display: flex;
   align-items: center;
@@ -161,10 +166,21 @@
   overflow: hidden;
 }
 
+.sde-ai-panel__avatar img {
+  width: 105%;
+  height: 105%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+  transform: translateY(-2px);
+}
+
 .sde-ai-panel__identity p {
   margin: 0;
+  font-family: "OutfitLocal", "LatoLocal", system-ui, sans-serif;
   font-size: 13.2px;
-  font-weight: 400;
+  line-height: 1.15;
+  font-weight: 600;
   letter-spacing: -0.015em;
   color: #050505;
 }
@@ -173,8 +189,10 @@
   display: block;
   margin-top: 2px;
 
+  font-family: "OutfitLocal", "LatoLocal", system-ui, sans-serif;
   font-size: 10.7px;
-  font-weight: 900;
+  line-height: 1.25;
+  font-weight: 800;
   letter-spacing: 0.015em;
   color: rgba(0, 0, 0, 0.55);
 }
@@ -207,50 +225,68 @@
   transform: rotate(90deg);
 }
 
-/* ================= Chat ================= */
+/* =========================
+   CHAT LAYOUT
+========================= */
 
 .sde-ai-chat {
   min-height: 0;
-  flex: 1;
+  flex: 1 1 auto;
 
   display: flex;
   flex-direction: column;
 
   padding: 14px;
   background: #ffffff;
+  overscroll-behavior: contain;
 }
 
-.sde-ai-chat__intro {
-  margin-bottom: 11px;
-  padding: 11px 12px;
+/* =========================
+   INTRO CARD
+========================= */
+
+.sde-ai-intro-card {
+  flex: 0 0 auto;
+
+  margin: 0 0 11px;
+  padding: 13px 13px 14px;
 
   border: 0.5px solid rgba(0, 0, 0, 0.13);
   border-radius: 17px;
   background: #f8f8f8;
+  color: #050505;
 }
 
-.sde-ai-chat__intro span {
+.sde-ai-intro-card__name {
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 6px;
 
+  font-family: "OutfitLocal", "LatoLocal", system-ui, sans-serif;
   font-size: 9.8px;
-  font-weight: 400;
+  line-height: 1.35;
+  font-weight: 800;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: #009db7;
 }
 
-.sde-ai-chat__intro p {
+.sde-ai-intro-card p {
   margin: 0;
 
-  font-size: 12.3px;
-  line-height: 1.45;
-  color: rgba(0, 0, 0, 0.6);
+  font-family: "OutfitLocal", "LatoLocal", system-ui, sans-serif;
+  font-size: 12.6px;
+  line-height: 1.52;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.68);
 }
+
+/* =========================
+   MESSAGES
+========================= */
 
 .sde-ai-chat__messages {
   min-height: 0;
-  flex: 1;
+  flex: 1 1 auto;
 
   display: flex;
   flex-direction: column;
@@ -258,6 +294,9 @@
 
   padding-right: 3px;
   overflow-y: auto;
+
+  overscroll-behavior: contain;
+  touch-action: pan-y;
 
   scrollbar-width: thin;
   scrollbar-color: rgba(0, 0, 0, 0.22) transparent;
@@ -270,8 +309,8 @@
 
   border-radius: 17px;
 
-  font-family: "Outfit", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    sans-serif;
+  font-family: "OutfitLocal", "LatoLocal", system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 .sde-ai-bubble--assistant {
@@ -295,7 +334,8 @@
   margin-bottom: 4px;
 
   font-size: 10px;
-  font-weight: 400;
+  line-height: 1.35;
+  font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: #009db7;
@@ -325,7 +365,7 @@
   gap: 8px;
 
   font-size: 12.4px;
-  font-weight: 400;
+  font-weight: 500;
   color: rgba(0, 0, 0, 0.58);
 }
 
@@ -339,13 +379,17 @@
   }
 }
 
-/* ================= Quick prompts ================= */
+/* =========================
+   QUICK PROMPTS
+========================= */
 
 .sde-ai-quick-prompts {
+  flex: 0 0 auto;
+
   display: grid;
   gap: 7px;
 
-  margin-top: 11px;
+  margin-top: 0;
 }
 
 .sde-ai-quick-prompts button {
@@ -357,10 +401,10 @@
   background: #ffffff;
   color: rgba(0, 0, 0, 0.72);
 
-  font-family: "Outfit", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    sans-serif;
+  font-family: "OutfitLocal", "LatoLocal", system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: 12.2px;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.25;
   text-align: left;
 
@@ -379,9 +423,13 @@
   color: #050505;
 }
 
-/* ================= Error / links ================= */
+/* =========================
+   ERROR / LINKS
+========================= */
 
 .sde-ai-error {
+  flex: 0 0 auto;
+
   margin-top: 10px;
   padding: 9px 10px;
 
@@ -399,6 +447,8 @@
 }
 
 .sde-ai-chat__links {
+  flex: 0 0 auto;
+
   display: flex;
   align-items: center;
   gap: 7px;
@@ -421,10 +471,10 @@
   background: #ffffff;
   color: #050505;
 
-  font-family: "Outfit", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    sans-serif;
+  font-family: "OutfitLocal", "LatoLocal", system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: 11.8px;
-  font-weight: 400;
+  font-weight: 600;
 
   cursor: pointer;
   transition:
@@ -441,9 +491,13 @@
   color: #ffffff;
 }
 
-/* ================= Composer ================= */
+/* =========================
+   COMPOSER
+========================= */
 
 .sde-ai-composer {
+  flex: 0 0 auto;
+
   display: grid;
   grid-template-columns: 1fr 42px;
   gap: 8px;
@@ -467,8 +521,8 @@
   background: #ffffff;
   color: #050505;
 
-  font-family: "Outfit", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    sans-serif;
+  font-family: "OutfitLocal", "LatoLocal", system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: 13px;
   line-height: 1.42;
 
@@ -517,7 +571,11 @@
   cursor: not-allowed;
 }
 
-/* ================= Focus ================= */
+
+
+/* =========================
+   FOCUS
+========================= */
 
 .sde-ai-launcher:focus-visible,
 .sde-ai-panel__close:focus-visible,
@@ -529,95 +587,26 @@
   outline-offset: 3px;
 }
 
-/* ================= Mobile ================= */
+/* =========================
+   SCROLL LOCK
+========================= */
 
-@media (max-width: 760px) {
-  .sde-ai-launcher {
-    right: 15px;
-    bottom: 15px;
-
-    min-height: 54px;
-    padding: 5px;
-    gap: 0;
-  }
-
-  .sde-ai-launcher__avatar {
-    width: 44px;
-    height: 44px;
-  }
-
-  .sde-ai-launcher__copy {
-    display: none;
-  }
-
-  .sde-ai-panel {
-    right: 10px;
-    bottom: 78px;
-
-    width: calc(100vw - 20px);
-    height: calc(100vh - 96px);
-
-    border-radius: 21px;
-  }
-
-  .sde-ai-panel__header {
-    padding: 13px 13px 12px;
-  }
-
-  .sde-ai-chat {
-    padding: 13px;
-  }
-
-  .sde-ai-bubble {
-    max-width: 92%;
-  }
-
-  .sde-ai-chat__links {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .sde-ai-chat__links button {
-    width: 100%;
-  }
-}
-
-/* =========================================================
-   Carlos AI — przesunięcie zdjęcia w środku avatara dialogowego
-   Nie rusza całego kółka, tylko obrazek wewnątrz
-========================================================= */
-
-.sde-ai-panel .sde-ai-panel__avatar img {
-  width: 105% !important;
-  height: 105% !important;
-  object-fit: cover !important;
-  object-position: center center !important;
-  display: block !important;
-  transform: translateY(-2px) !important;
-}
-
-/* Launcher zostaje bez przesuwania w górę */
-.sde-ai-launcher .sde-ai-launcher__avatar img {
-  width: 105% !important;
-  height: 105% !important;
-  object-fit: cover !important;
-  object-position: center center !important;
-  display: block !important;
-  transform: translateY(-1px) !important;
+body.sde-ai-open {
+  overflow: hidden !important;
 }
 
 /* =========================
-   CARLOS AI — MOBILE REMOVE OUTER LAUNCHER FRAME
+   MOBILE
 ========================= */
 
 @media (max-width: 760px) {
   .sde-ai-launcher {
-    right: 15px !important;
-    bottom: 15px !important;
+    width: 58px !important;
+    height: 58px !important;
+    min-height: 58px !important;
 
-    min-height: 44px !important;
-    width: 44px !important;
-    height: 44px !important;
+    right: 14px !important;
+    bottom: 14px !important;
 
     padding: 0 !important;
     gap: 0 !important;
@@ -642,59 +631,6 @@
   }
 
   .sde-ai-launcher__avatar {
-    width: 44px !important;
-    height: 44px !important;
-
-    border: 0.5px solid rgba(0, 0, 0, 0.28) !important;
-    border-radius: 50% !important;
-    background: #ffffff !important;
-
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.14) !important;
-  }
-
-  .sde-ai-launcher__copy {
-    display: none !important;
-  }
-}
-
-/* =========================
-   CARLOS AI — BLOCK PAGE SCROLL WHEN OPEN
-========================= */
-
-body.sde-ai-open {
-  overflow: hidden !important;
-}
-
-.sde-ai-panel,
-.sde-ai-chat,
-.sde-ai-chat__messages {
-  overscroll-behavior: contain;
-}
-
-.sde-ai-chat__messages {
-  touch-action: pan-y;
-}
-
-/* =========================
-   CARLOS AI — MOBILE LARGER ICON
-========================= */
-
-@media (max-width: 760px) {
-  .sde-ai-launcher {
-    width: 58px !important;
-    height: 58px !important;
-    min-height: 58px !important;
-
-    right: 14px !important;
-    bottom: 14px !important;
-
-    padding: 0 !important;
-    border: 0 !important;
-    background: transparent !important;
-    box-shadow: none !important;
-  }
-
-  .sde-ai-launcher__avatar {
     width: 58px !important;
     height: 58px !important;
 
@@ -716,39 +652,171 @@ body.sde-ai-open {
   .sde-ai-launcher__copy {
     display: none !important;
   }
+
+  .sde-ai-panel {
+    left: 8px !important;
+    right: 8px !important;
+    top: 8svh !important;
+    bottom: 10px !important;
+
+    width: auto !important;
+    height: auto !important;
+    max-height: calc(100svh - 8svh - 10px) !important;
+
+    border-radius: 22px !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    overflow: hidden !important;
+  }
+
+  .sde-ai-panel__header {
+    padding: 13px 13px 12px;
+  }
+
+  .sde-ai-panel__avatar {
+    width: 42px;
+    height: 42px;
+  }
+
+  .sde-ai-panel__identity p {
+    font-size: 13px;
+  }
+
+  .sde-ai-panel__identity span {
+    font-size: 10.4px;
+  }
+
+  .sde-ai-chat {
+    min-height: 0;
+    flex: 1 1 auto;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 12px;
+  }
+
+  .sde-ai-intro-card {
+    margin: 0 0 10px;
+    padding: 13px 13px 14px;
+    border-radius: 17px;
+  }
+
+  .sde-ai-intro-card p {
+    font-size: 12.6px;
+    line-height: 1.52;
+  }
+
+  .sde-ai-chat__messages {
+    flex: 1 1 auto;
+    min-height: 0;
+    max-height: none !important;
+    overflow-y: auto;
+  }
+
+  .sde-ai-bubble {
+    max-width: 92%;
+  }
+
+  .sde-ai-quick-prompts {
+    flex: 0 0 auto;
+    gap: 6px;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  .sde-ai-quick-prompts button {
+    min-height: 36px;
+    padding: 8px 10px;
+    font-size: 11.7px;
+    line-height: 1.22;
+  }
+
+  .sde-ai-chat__links {
+    flex: 0 0 auto;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+    margin-top: 10px;
+  }
+
+  .sde-ai-chat__links button {
+    width: 100%;
+    min-height: 33px;
+  }
+
+  .sde-ai-composer {
+    flex: 0 0 auto;
+    grid-template-columns: 1fr 42px;
+    margin-top: 10px;
+    padding-top: 10px;
+  }
+
+  .sde-ai-composer textarea {
+    max-height: 90px;
+    font-size: 12.7px;
+  }
 }
 
-/* =========================
-   CARLOS AI — SAFE PANEL POSITION + SCROLL LOCK
-========================= */
+@media (max-width: 420px) {
+  .sde-ai-panel {
+    left: 7px !important;
+    right: 7px !important;
+    top: 7svh !important;
+    bottom: 9px !important;
 
-body.sde-ai-open {
-  overflow: hidden !important;
+    max-height: calc(100svh - 7svh - 9px) !important;
+    border-radius: 21px !important;
+  }
+
+  .sde-ai-chat {
+    padding: 11px;
+  }
+
+  .sde-ai-intro-card p {
+    font-size: 12.2px;
+    line-height: 1.5;
+  }
+
+  .sde-ai-quick-prompts button {
+    font-size: 11.4px;
+  }
 }
 
-.sde-ai-panel {
-  height: min(680px, calc(100svh - var(--header-height) - 120px));
-  bottom: 96px;
+/* =========================================================
+   CARLOS AI — SEND BUTTON BOTTOM ALIGN FIX
+========================================================= */
+
+.sde-ai-composer {
+  align-items: end !important;
 }
 
-.sde-ai-panel,
-.sde-ai-chat,
-.sde-ai-chat__messages {
-  overscroll-behavior: contain;
+.sde-ai-composer textarea {
+  min-height: 58px !important;
 }
 
-.sde-ai-chat__messages {
-  touch-action: pan-y;
+.sde-ai-composer button {
+  align-self: end !important;
+  margin-bottom: 1px !important;
 }
+
+/* =========================================================
+   CARLOS AI — HIGHER MOBILE PANEL
+========================================================= */
 
 @media (max-width: 760px) {
   .sde-ai-panel {
-    right: 10px !important;
-    bottom: 82px !important;
+    top: 4svh !important;
+    bottom: 8px !important;
+    max-height: calc(100svh - 4svh - 8px) !important;
+  }
+}
 
-    width: calc(100vw - 20px) !important;
-    height: calc(100svh - var(--header-height) - 94px) !important;
-
-    border-radius: 21px !important;
+@media (max-width: 420px) {
+  .sde-ai-panel {
+    top: 3svh !important;
+    bottom: 8px !important;
+    max-height: calc(100svh - 3svh - 8px) !important;
   }
 }

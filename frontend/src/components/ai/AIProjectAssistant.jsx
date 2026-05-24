@@ -6,7 +6,7 @@ import assistantImage from "../../assets/images/ai-assistant.png";
 import "../../styles/ai-assistant.css";
 
 const API_BASE_URL =
-  import.meta.env.VITE_AI_API_URL || "http://127.0.0.1:5000";
+  import.meta.env.VITE_AI_API_URL || "https://sddestonie.onrender.com";
 
 const assistantCopy = {
   en: {

@@ -1,8 +1,19 @@
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 import heroBg from "../assets/images/aidivider.png";
 import aiServices from "../assets/images/aiservices.png";
+import TurnstileWidget from "../components/ui/TurnstileWidget.jsx";
+
+const API_BASE_URL =
+  import.meta.env.VITE_API_URL ||
+  (import.meta.env.DEV
+    ? "http://localhost:5000"
+    : "https://sddestonie.onrender.com");
+
+function normalizeApiUrl(url) {
+  return url.replace(/\/$/, "");
+}
 
 const pageCopy = {
   en: {
@@ -41,6 +52,10 @@ const pageCopy = {
     bottomText:
       "After submitting the form, we will review your description and contact you.",
     submit: "Send project brief",
+    sending: "Sending...",
+    sendingStatus: "Sending your project brief...",
+    successStatus: "Thank you. Your project brief has been sent.",
+    errorStatus: "The form could not be sent. Please try again.",
     solutionOptions: [
       ["crm", "CRM / admin panel"],
       ["saas", "Custom SaaS system"],
@@ -93,6 +108,10 @@ const pageCopy = {
     bottomText:
       "Pärast vormi saatmist analüüsime kirjeldust ja võtame sinuga ühendust.",
     submit: "Saada projekti kirjeldus",
+    sending: "Saatmine...",
+    sendingStatus: "Saadame projekti kirjeldust...",
+    successStatus: "Aitäh. Projekti kirjeldus on saadetud.",
+    errorStatus: "Vormi ei õnnestunud saata. Palun proovige uuesti.",
     solutionOptions: [
       ["crm", "CRM / halduspaneel"],
       ["saas", "Kohandatud SaaS-süsteem"],
@@ -145,6 +164,10 @@ const pageCopy = {
     bottomText:
       "Po wysłaniu formularza przeanalizujemy opis i skontaktujemy się z Tobą.",
     submit: "Wyślij opis projektu",
+    sending: "Wysyłanie...",
+    sendingStatus: "Wysyłamy opis projektu...",
+    successStatus: "Dziękujemy. Opis projektu został wysłany.",
+    errorStatus: "Nie udało się wysłać formularza. Spróbuj ponownie.",
     solutionOptions: [
       ["crm", "CRM / panel administracyjny"],
       ["saas", "Dedykowany system SaaS"],
@@ -170,6 +193,9 @@ function getCurrentLanguage(pathname) {
 
 function ProjectAnalysisPage() {
   const location = useLocation();
+  const [status, setStatus] = useState("idle");
+  const [statusMessage, setStatusMessage] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState("");
 
   const language = useMemo(
     () => getCurrentLanguage(location.pathname),
@@ -177,6 +203,64 @@ function ProjectAnalysisPage() {
   );
 
   const copy = pageCopy[language];
+  const isSending = status === "sending";
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    const payload = {
+      language,
+      source: "project_analysis_form",
+      name: String(formData.get("name") || "").trim(),
+      company: String(formData.get("company") || "").trim(),
+      email: String(formData.get("email") || "").trim(),
+      phone: String(formData.get("phone") || "").trim(),
+      company_description: String(formData.get("company_description") || "").trim(),
+      main_problem: String(formData.get("main_problem") || "").trim(),
+      current_process: String(formData.get("current_process") || "").trim(),
+      automation_goal: String(formData.get("automation_goal") || "").trim(),
+      current_tools: String(formData.get("current_tools") || "").trim(),
+      solution_type: String(formData.get("solution_type") || "").trim(),
+      priority: String(formData.get("priority") || "").trim(),
+      additional_notes: String(formData.get("additional_notes") || "").trim(),
+      privacy_consent: formData.get("privacy_consent") === "on",
+      terms_consent: formData.get("terms_consent") === "on",
+      turnstile_token: turnstileToken,
+    };
+
+    setStatus("sending");
+    setStatusMessage(copy.sendingStatus);
+
+    try {
+      const response = await fetch(
+        `${normalizeApiUrl(API_BASE_URL)}/api/project-request`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(payload),
+        }
+      );
+
+      const data = await response.json().catch(() => ({}));
+
+      if (!response.ok) {
+        throw new Error(data?.error || copy.errorStatus);
+      }
+
+      form.reset();
+      setTurnstileToken("");
+      setStatus("success");
+      setStatusMessage(data?.message || copy.successStatus);
+    } catch (error) {
+      setStatus("error");
+      setStatusMessage(error?.message || copy.errorStatus);
+    }
+  }
 
   return (
     <main>
@@ -207,7 +291,11 @@ function ProjectAnalysisPage() {
             <span>{copy.sectionText}</span>
           </div>
 
-          <form className="project-analysis-form" action="#" method="post">
+          <form
+            className="project-analysis-form"
+            onSubmit={handleSubmit}
+            noValidate={false}
+          >
             <div className="project-analysis-form__row">
               <label>
                 {copy.name}
@@ -216,23 +304,14 @@ function ProjectAnalysisPage() {
 
               <label>
                 {copy.company}
-                <input
-                  type="text"
-                  name="company"
-                  autoComplete="organization"
-                />
+                <input type="text" name="company" autoComplete="organization" />
               </label>
             </div>
 
             <div className="project-analysis-form__row">
               <label>
                 {copy.email}
-                <input
-                  type="email"
-                  name="email"
-                  autoComplete="email"
-                  required
-                />
+                <input type="email" name="email" autoComplete="email" required />
               </label>
 
               <label>
@@ -312,10 +391,11 @@ function ProjectAnalysisPage() {
               <textarea name="additional_notes" rows="5" />
             </label>
 
-            <div className="project-analysis-form__turnstile">
-              <div
-                className="cf-turnstile"
-                data-sitekey="0x4AAAAAAC8X-gGY-b-l3tND"
+            <div className="contact-form__turnstile">
+              <TurnstileWidget
+                onVerify={setTurnstileToken}
+                onExpire={() => setTurnstileToken("")}
+                onError={() => setTurnstileToken("")}
               />
             </div>
 
@@ -351,11 +431,23 @@ function ProjectAnalysisPage() {
               </label>
             </div>
 
+            {statusMessage && (
+              <p
+                className={`project-analysis-form__status project-analysis-form__status--${status}`}
+              >
+                {statusMessage}
+              </p>
+            )}
+
             <div className="project-analysis-form__bottom">
               <p>{copy.bottomText}</p>
 
-              <button type="submit" className="project-analysis-form__button">
-                {copy.submit}
+              <button
+                type="submit"
+                className="project-analysis-form__button"
+                disabled={isSending}
+              >
+                {isSending ? copy.sending : copy.submit}
               </button>
             </div>
           </form>

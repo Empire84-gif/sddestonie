@@ -1,6 +1,75 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import TurnstileWidget from "../ui/TurnstileWidget.jsx";
+
+const API_BASE_URL =
+  import.meta.env.VITE_API_URL ||
+  (import.meta.env.DEV
+    ? "http://localhost:5000"
+    : "https://sddestonie.onrender.com");
+
+function normalizeApiUrl(url) {
+  return url.replace(/\/$/, "");
+}
 
 function EnContactSection() {
+  const [status, setStatus] = useState("idle");
+  const [statusMessage, setStatusMessage] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState("");
+
+  const isSending = status === "sending";
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    const payload = {
+      language: "en",
+      source: "contact_section",
+      name: String(formData.get("name") || "").trim(),
+      company: String(formData.get("company") || "").trim(),
+      email: String(formData.get("email") || "").trim(),
+      project_type: String(formData.get("project_type") || "").trim(),
+      message: String(formData.get("message") || "").trim(),
+      privacy_consent: formData.get("privacy_consent") === "on",
+      terms_consent: formData.get("terms_consent") === "on",
+      turnstile_token: turnstileToken,
+    };
+
+    setStatus("sending");
+    setStatusMessage("Sending your enquiry...");
+
+    try {
+      const response = await fetch(`${normalizeApiUrl(API_BASE_URL)}/api/contact`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      const data = await response.json().catch(() => ({}));
+
+      if (!response.ok) {
+        throw new Error(
+          data?.error || "The form could not be sent. Please try again."
+        );
+      }
+
+      form.reset();
+      setTurnstileToken("");
+      setStatus("success");
+      setStatusMessage(data?.message || "Thank you. Your message has been sent.");
+    } catch (error) {
+      setStatus("error");
+      setStatusMessage(
+        error?.message || "The form could not be sent. Please try again."
+      );
+    }
+  }
+
   return (
     <section id="kontakt" className="contact-section">
       <div className="container contact-section__inner">
@@ -46,7 +115,7 @@ function EnContactSection() {
           </div>
         </div>
 
-        <form className="contact-form" action="#" method="post">
+        <form className="contact-form" onSubmit={handleSubmit} noValidate={false}>
           <div className="contact-form__row">
             <label>
               Full name
@@ -89,9 +158,10 @@ function EnContactSection() {
           </label>
 
           <div className="contact-form__turnstile">
-            <div
-              className="cf-turnstile"
-              data-sitekey="0x4AAAAAAC8X-gGY-b-l3tND"
+            <TurnstileWidget
+              onVerify={setTurnstileToken}
+              onExpire={() => setTurnstileToken("")}
+              onError={() => setTurnstileToken("")}
             />
           </div>
 
@@ -101,14 +171,10 @@ function EnContactSection() {
 
               <span>
                 I have read the{" "}
-                <Link
-                  to="/privacy-policy"
-                  className="contact-form__legal-link"
-                >
+                <Link to="/privacy-policy" className="contact-form__legal-link">
                   PRIVACY POLICY
                 </Link>{" "}
-                and consent to the processing of my data for the purpose of
-                handling this enquiry.
+                and consent to the processing of my data for the purpose of handling this enquiry.
               </span>
             </label>
 
@@ -117,10 +183,7 @@ function EnContactSection() {
 
               <span>
                 I accept the{" "}
-                <Link
-                  to="/terms"
-                  className="contact-form__legal-link"
-                >
+                <Link to="/terms" className="contact-form__legal-link">
                   TERMS AND CONDITIONS
                 </Link>{" "}
                 for using the contact form.
@@ -128,14 +191,17 @@ function EnContactSection() {
             </label>
           </div>
 
-          <div className="contact-form__bottom">
-            <p>
-              After you submit the form, we will contact you regarding your
-              enquiry.
+          {statusMessage && (
+            <p className={`contact-form__status contact-form__status--${status}`}>
+              {statusMessage}
             </p>
+          )}
 
-            <button type="submit" className="contact-form__button">
-              Send enquiry
+          <div className="contact-form__bottom">
+            <p>After you submit the form, we will contact you regarding your enquiry.</p>
+
+            <button type="submit" className="contact-form__button" disabled={isSending}>
+              {isSending ? "Sending..." : "Send enquiry"}
             </button>
           </div>
         </form>
