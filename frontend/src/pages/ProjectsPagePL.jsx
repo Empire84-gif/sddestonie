@@ -512,11 +512,7 @@ const projects = [
                   </div>
                 ))}
               </div>
-
-              <div className="projects-showcase-section__continue">
-                <span>Ciąg dalszy opisu pod zdjęciem</span>
-                <ArrowDown size={18} />
-              </div>
+              
             </div>
 
               <div
