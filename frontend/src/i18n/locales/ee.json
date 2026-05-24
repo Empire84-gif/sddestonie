@@ -1,0 +1,46 @@
+{
+  "brand": {
+    "name": "SDE",
+    "fullName": "Solutions Digitales d’Estonie"
+  },
+  "nav": {
+    "home": "Avaleht",
+    "services": "Teenused",
+    "ai": "AI süsteemid",
+    "projects": "Projektid",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "kicker": "Eritarkvara · SaaS · CRM · AI automatiseerimine",
+    "title": "Ärisüsteemid praktilise AI-toega",
+    "text": "Loome kohandatud SaaS-platvorme, CRM-süsteeme, halduspaneele, töövoogude automatiseerimist, dokumendigeneraatoreid ja AI-integratsioone, mis sobivad ettevõtte tegelike protsessidega.",
+    "primary": "Räägime projektist",
+    "secondary": "Vaata teenuseid"
+  },
+  "pages": {
+    "services": {
+      "title": "Teenused",
+      "text": "Kohandatud ärisüsteemid, automatiseerimine, CRM, SaaS, PDF-dokumendid, API-integratsioonid ja AI-toega lahendused."
+    },
+    "ai": {
+      "title": "AI süsteemid",
+      "text": "AI praktilise töövoo abilisena: andmete analüüs, dokumentide ülevaatus, päringute klassifitseerimine, kokkuvõtted, soovitused ja vastuste mustandid."
+    },
+    "projects": {
+      "title": "Projektid",
+      "text": "Siia tulevad juhtumiuuringud, valitud arendused, portfoolio näited ja äriprobleemid, mida lahendame."
+    },
+    "contact": {
+      "title": "Kontakt",
+      "text": "Kirjelda protsessi, mida soovid korrastada või automatiseerida. Tuleme tagasi praktilise lahendusettepanekuga."
+    },
+    "notFound": {
+      "title": "Lehte ei leitud",
+      "text": "Seda lehte ei ole olemas või see on teisaldatud."
+    }
+  },
+  "footer": {
+    "company": "SDE on Handke Holding OÜ omanduses ja halduses olev kaubamärk.",
+    "rights": "Kõik õigused kaitstud."
+  }
+}

@@ -1,0 +1,754 @@
+/* =========================================================
+   SDE / Carlos AI
+   Premium white AI chat window
+========================================================= */
+
+.sde-ai-launcher {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 9990;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+
+  min-height: 58px;
+  padding: 6px 15px 6px 6px;
+
+  border: 0.5px solid rgba(0, 0, 0, 0.35);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.96);
+  color: #050505;
+
+  box-shadow: 0 16px 42px rgba(0, 0, 0, 0.14);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  cursor: pointer;
+  transition:
+    transform 0.22s ease,
+    border-color 0.22s ease,
+    box-shadow 0.22s ease;
+}
+
+.sde-ai-launcher:hover,
+.sde-ai-launcher.is-open {
+  transform: translateY(-2px);
+  border-color: rgba(0, 157, 183, 0.85);
+  box-shadow:
+    0 20px 54px rgba(0, 0, 0, 0.18),
+    0 0 0 1px rgba(0, 157, 183, 0.1);
+}
+
+.sde-ai-launcher__avatar {
+  width: 48px;
+  height: 48px;
+  flex: 0 0 auto;
+
+  display: grid;
+  place-items: center;
+
+  border: 0.5px solid rgba(0, 0, 0, 0.28);
+  border-radius: 50%;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.sde-ai-launcher__avatar img,
+.sde-ai-panel__avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  transform: none;
+}
+
+.sde-ai-launcher__copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1px;
+
+  font-family: "Outfit", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+.sde-ai-launcher__copy strong {
+  font-size: 12.8px;
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  color: #050505;
+}
+
+.sde-ai-launcher__copy span {
+  font-size: 10.8px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.56);
+}
+
+/* ================= Panel ================= */
+
+.sde-ai-panel {
+  position: fixed;
+  right: 24px;
+  bottom: 96px;
+  z-index: 9991;
+
+  width: min(420px, calc(100vw - 32px));
+  height: min(680px, calc(100vh - 124px));
+
+  display: flex;
+  flex-direction: column;
+
+  border: 0.5px solid rgba(0, 0, 0, 0.42);
+  border-radius: 24px;
+  background: #ffffff;
+  color: #050505;
+
+  box-shadow: 0 34px 90px rgba(0, 0, 0, 0.22);
+
+  overflow: hidden;
+  animation: sdeAiPanelIn 0.22s ease both;
+}
+
+@keyframes sdeAiPanelIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.985);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.sde-ai-panel__header {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+
+  padding: 14px 15px 13px;
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.16);
+  background: #ffffff;
+}
+
+.sde-ai-panel__identity {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-width: 0;
+}
+
+.sde-ai-panel__avatar {
+  width: 44px;
+  height: 44px;
+  flex: 0 0 auto;
+
+  display: grid;
+  place-items: center;
+
+  border: 0.5px solid rgba(0, 0, 0, 0.28);
+  border-radius: 50%;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.sde-ai-panel__identity p {
+  margin: 0;
+  font-size: 13.2px;
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  color: #050505;
+}
+
+.sde-ai-panel__identity span {
+  display: block;
+  margin-top: 2px;
+
+  font-size: 10.7px;
+  font-weight: 900;
+  letter-spacing: 0.015em;
+  color: rgba(0, 0, 0, 0.55);
+}
+
+.sde-ai-panel__close {
+  width: 34px;
+  height: 34px;
+  flex: 0 0 auto;
+
+  display: grid;
+  place-items: center;
+
+  border: 0.5px solid rgba(0, 0, 0, 0.18);
+  border-radius: 50%;
+  background: #ffffff;
+  color: #050505;
+
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.sde-ai-panel__close:hover {
+  background: #050505;
+  color: #ffffff;
+  border-color: #050505;
+  transform: rotate(90deg);
+}
+
+/* ================= Chat ================= */
+
+.sde-ai-chat {
+  min-height: 0;
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 14px;
+  background: #ffffff;
+}
+
+.sde-ai-chat__intro {
+  margin-bottom: 11px;
+  padding: 11px 12px;
+
+  border: 0.5px solid rgba(0, 0, 0, 0.13);
+  border-radius: 17px;
+  background: #f8f8f8;
+}
+
+.sde-ai-chat__intro span {
+  display: block;
+  margin-bottom: 5px;
+
+  font-size: 9.8px;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #009db7;
+}
+
+.sde-ai-chat__intro p {
+  margin: 0;
+
+  font-size: 12.3px;
+  line-height: 1.45;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.sde-ai-chat__messages {
+  min-height: 0;
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+
+  padding-right: 3px;
+  overflow-y: auto;
+
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.22) transparent;
+}
+
+.sde-ai-bubble {
+  width: fit-content;
+  max-width: 88%;
+  padding: 10px 12px;
+
+  border-radius: 17px;
+
+  font-family: "Outfit", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+.sde-ai-bubble--assistant {
+  align-self: flex-start;
+
+  border: 0.5px solid rgba(0, 0, 0, 0.14);
+  background: #ffffff;
+  color: #050505;
+}
+
+.sde-ai-bubble--user {
+  align-self: flex-end;
+
+  border: 0.5px solid #050505;
+  background: #050505;
+  color: #ffffff;
+}
+
+.sde-ai-bubble__name {
+  display: block;
+  margin-bottom: 4px;
+
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #009db7;
+}
+
+.sde-ai-bubble p {
+  margin: 0;
+
+  white-space: pre-wrap;
+
+  font-size: 12.9px;
+  line-height: 1.5;
+  letter-spacing: -0.006em;
+}
+
+.sde-ai-bubble--assistant p {
+  color: rgba(0, 0, 0, 0.72);
+}
+
+.sde-ai-bubble--user p {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.sde-ai-loading {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  font-size: 12.4px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.58);
+}
+
+.sde-ai-loading svg {
+  animation: sdeAiSpin 0.9s linear infinite;
+}
+
+@keyframes sdeAiSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ================= Quick prompts ================= */
+
+.sde-ai-quick-prompts {
+  display: grid;
+  gap: 7px;
+
+  margin-top: 11px;
+}
+
+.sde-ai-quick-prompts button {
+  min-height: 38px;
+  padding: 9px 11px;
+
+  border: 0.5px solid rgba(0, 0, 0, 0.15);
+  border-radius: 999px;
+  background: #ffffff;
+  color: rgba(0, 0, 0, 0.72);
+
+  font-family: "Outfit", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  font-size: 12.2px;
+  font-weight: 400;
+  line-height: 1.25;
+  text-align: left;
+
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.sde-ai-quick-prompts button:hover {
+  transform: translateY(-1px);
+  border-color: rgba(0, 157, 183, 0.55);
+  background: rgba(0, 157, 183, 0.055);
+  color: #050505;
+}
+
+/* ================= Error / links ================= */
+
+.sde-ai-error {
+  margin-top: 10px;
+  padding: 9px 10px;
+
+  border: 0.5px solid rgba(160, 0, 0, 0.24);
+  border-radius: 13px;
+  background: rgba(160, 0, 0, 0.045);
+}
+
+.sde-ai-error p {
+  margin: 0;
+
+  font-size: 11.8px;
+  line-height: 1.4;
+  color: rgba(120, 0, 0, 0.76);
+}
+
+.sde-ai-chat__links {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  margin-top: 11px;
+}
+
+.sde-ai-chat__links button {
+  min-height: 34px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  padding: 0 11px 1.5px;
+
+  border: 0.5px solid rgba(0, 0, 0, 0.18);
+  border-radius: 999px;
+  background: #ffffff;
+  color: #050505;
+
+  font-family: "Outfit", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  font-size: 11.8px;
+  font-weight: 400;
+
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.sde-ai-chat__links button:hover {
+  transform: translateY(-1px);
+  border-color: #050505;
+  background: #050505;
+  color: #ffffff;
+}
+
+/* ================= Composer ================= */
+
+.sde-ai-composer {
+  display: grid;
+  grid-template-columns: 1fr 42px;
+  gap: 8px;
+
+  margin-top: 11px;
+  padding-top: 11px;
+  border-top: 0.5px solid rgba(0, 0, 0, 0.13);
+}
+
+.sde-ai-composer textarea {
+  width: 100%;
+  max-height: 120px;
+  resize: none;
+
+  padding: 11px 12px;
+
+  border: 0.5px solid rgba(0, 0, 0, 0.22);
+  border-radius: 16px;
+  outline: none;
+
+  background: #ffffff;
+  color: #050505;
+
+  font-family: "Outfit", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  font-size: 13px;
+  line-height: 1.42;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.sde-ai-composer textarea::placeholder {
+  color: rgba(0, 0, 0, 0.38);
+}
+
+.sde-ai-composer textarea:focus {
+  border-color: rgba(0, 157, 183, 0.95);
+  box-shadow: 0 0 0 3px rgba(0, 157, 183, 0.1);
+}
+
+.sde-ai-composer button {
+  width: 42px;
+  height: 42px;
+
+  display: grid;
+  place-items: center;
+
+  border: 0.5px solid #050505;
+  border-radius: 50%;
+  background: #050505;
+  color: #ffffff;
+
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.sde-ai-composer button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  border-color: #009db7;
+  background: #009db7;
+}
+
+.sde-ai-composer button:disabled {
+  opacity: 0.38;
+  cursor: not-allowed;
+}
+
+/* ================= Focus ================= */
+
+.sde-ai-launcher:focus-visible,
+.sde-ai-panel__close:focus-visible,
+.sde-ai-quick-prompts button:focus-visible,
+.sde-ai-chat__links button:focus-visible,
+.sde-ai-composer textarea:focus-visible,
+.sde-ai-composer button:focus-visible {
+  outline: 2px solid rgba(0, 157, 183, 0.75);
+  outline-offset: 3px;
+}
+
+/* ================= Mobile ================= */
+
+@media (max-width: 760px) {
+  .sde-ai-launcher {
+    right: 15px;
+    bottom: 15px;
+
+    min-height: 54px;
+    padding: 5px;
+    gap: 0;
+  }
+
+  .sde-ai-launcher__avatar {
+    width: 44px;
+    height: 44px;
+  }
+
+  .sde-ai-launcher__copy {
+    display: none;
+  }
+
+  .sde-ai-panel {
+    right: 10px;
+    bottom: 78px;
+
+    width: calc(100vw - 20px);
+    height: calc(100vh - 96px);
+
+    border-radius: 21px;
+  }
+
+  .sde-ai-panel__header {
+    padding: 13px 13px 12px;
+  }
+
+  .sde-ai-chat {
+    padding: 13px;
+  }
+
+  .sde-ai-bubble {
+    max-width: 92%;
+  }
+
+  .sde-ai-chat__links {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .sde-ai-chat__links button {
+    width: 100%;
+  }
+}
+
+/* =========================================================
+   Carlos AI — przesunięcie zdjęcia w środku avatara dialogowego
+   Nie rusza całego kółka, tylko obrazek wewnątrz
+========================================================= */
+
+.sde-ai-panel .sde-ai-panel__avatar img {
+  width: 105% !important;
+  height: 105% !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  display: block !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Launcher zostaje bez przesuwania w górę */
+.sde-ai-launcher .sde-ai-launcher__avatar img {
+  width: 105% !important;
+  height: 105% !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  display: block !important;
+  transform: translateY(-1px) !important;
+}
+
+/* =========================
+   CARLOS AI — MOBILE REMOVE OUTER LAUNCHER FRAME
+========================= */
+
+@media (max-width: 760px) {
+  .sde-ai-launcher {
+    right: 15px !important;
+    bottom: 15px !important;
+
+    min-height: 44px !important;
+    width: 44px !important;
+    height: 44px !important;
+
+    padding: 0 !important;
+    gap: 0 !important;
+
+    border: 0 !important;
+    outline: 0 !important;
+    border-radius: 50% !important;
+
+    background: transparent !important;
+    box-shadow: none !important;
+
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  .sde-ai-launcher:hover,
+  .sde-ai-launcher.is-open {
+    transform: translateY(-2px) !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    background: transparent !important;
+  }
+
+  .sde-ai-launcher__avatar {
+    width: 44px !important;
+    height: 44px !important;
+
+    border: 0.5px solid rgba(0, 0, 0, 0.28) !important;
+    border-radius: 50% !important;
+    background: #ffffff !important;
+
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.14) !important;
+  }
+
+  .sde-ai-launcher__copy {
+    display: none !important;
+  }
+}
+
+/* =========================
+   CARLOS AI — BLOCK PAGE SCROLL WHEN OPEN
+========================= */
+
+body.sde-ai-open {
+  overflow: hidden !important;
+}
+
+.sde-ai-panel,
+.sde-ai-chat,
+.sde-ai-chat__messages {
+  overscroll-behavior: contain;
+}
+
+.sde-ai-chat__messages {
+  touch-action: pan-y;
+}
+
+/* =========================
+   CARLOS AI — MOBILE LARGER ICON
+========================= */
+
+@media (max-width: 760px) {
+  .sde-ai-launcher {
+    width: 58px !important;
+    height: 58px !important;
+    min-height: 58px !important;
+
+    right: 14px !important;
+    bottom: 14px !important;
+
+    padding: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  .sde-ai-launcher__avatar {
+    width: 58px !important;
+    height: 58px !important;
+
+    border: 0.5px solid rgba(0, 0, 0, 0.28) !important;
+    border-radius: 50% !important;
+    background: #ffffff !important;
+
+    box-shadow: 0 16px 38px rgba(0, 0, 0, 0.17) !important;
+  }
+
+  .sde-ai-launcher .sde-ai-launcher__avatar img {
+    width: 108% !important;
+    height: 108% !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+    transform: translateY(-1px) !important;
+  }
+
+  .sde-ai-launcher__copy {
+    display: none !important;
+  }
+}
+
+/* =========================
+   CARLOS AI — SAFE PANEL POSITION + SCROLL LOCK
+========================= */
+
+body.sde-ai-open {
+  overflow: hidden !important;
+}
+
+.sde-ai-panel {
+  height: min(680px, calc(100svh - var(--header-height) - 120px));
+  bottom: 96px;
+}
+
+.sde-ai-panel,
+.sde-ai-chat,
+.sde-ai-chat__messages {
+  overscroll-behavior: contain;
+}
+
+.sde-ai-chat__messages {
+  touch-action: pan-y;
+}
+
+@media (max-width: 760px) {
+  .sde-ai-panel {
+    right: 10px !important;
+    bottom: 82px !important;
+
+    width: calc(100vw - 20px) !important;
+    height: calc(100svh - var(--header-height) - 94px) !important;
+
+    border-radius: 21px !important;
+  }
+}

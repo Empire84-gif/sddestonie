@@ -1,0 +1,46 @@
+{
+  "brand": {
+    "name": "SDE",
+    "fullName": "Solutions Digitales d’Estonie"
+  },
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "ai": "AI Systems",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "kicker": "Custom software · SaaS · CRM · AI automation",
+    "title": "Business systems with practical AI support",
+    "text": "We build custom SaaS platforms, CRM systems, admin panels, workflow automation, document generators and AI integrations tailored to real business processes.",
+    "primary": "Discuss a project",
+    "secondary": "View services"
+  },
+  "pages": {
+    "services": {
+      "title": "Services",
+      "text": "Custom business systems, automation, CRM, SaaS, PDF documents, API integrations and AI-powered solutions."
+    },
+    "ai": {
+      "title": "AI Systems",
+      "text": "AI as a practical workflow assistant: data analysis, document review, request classification, summaries, recommendations and email drafts."
+    },
+    "projects": {
+      "title": "Projects",
+      "text": "A place for case studies, selected implementations, portfolio examples and the business problems we solve."
+    },
+    "contact": {
+      "title": "Contact",
+      "text": "Describe the process you want to organize or automate. We will come back with a practical solution proposal."
+    },
+    "notFound": {
+      "title": "Page not found",
+      "text": "This page does not exist or has been moved."
+    }
+  },
+  "footer": {
+    "company": "SDE is a brand owned and operated by Handke Holding OÜ.",
+    "rights": "All rights reserved."
+  }
+}
