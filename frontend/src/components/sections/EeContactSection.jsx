@@ -52,22 +52,18 @@ function EeContactSection() {
 
       const data = await response.json().catch(() => ({}));
 
-      if (!response.ok) {
-        throw new Error(
-          data?.error || "Vormi ei õnnestunud saata. Palun proovige uuesti."
-        );
-      }
+     if (!response.ok) {
+  throw new Error("Vormi ei õnnestunud saata. Palun proovige uuesti.");
+}
 
-      form.reset();
-      setTurnstileToken("");
-      setStatus("success");
-      setStatusMessage(data?.message || "Aitäh. Sõnum on saadetud.");
-    } catch (error) {
-      setStatus("error");
-      setStatusMessage(
-        error?.message || "Vormi ei õnnestunud saata. Palun proovige uuesti."
-      );
-    }
+form.reset();
+setTurnstileToken("");
+setStatus("success");
+setStatusMessage("Aitäh. Sõnum on saadetud.");
+} catch {
+  setStatus("error");
+  setStatusMessage("Vormi ei õnnestunud saata. Palun proovige uuesti.");
+}
   }
 
   return (

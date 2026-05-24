@@ -53,21 +53,17 @@ function EnContactSection() {
       const data = await response.json().catch(() => ({}));
 
       if (!response.ok) {
-        throw new Error(
-          data?.error || "The form could not be sent. Please try again."
-        );
-      }
+  throw new Error("The form could not be sent. Please try again.");
+}
 
-      form.reset();
-      setTurnstileToken("");
-      setStatus("success");
-      setStatusMessage(data?.message || "Thank you. Your message has been sent.");
-    } catch (error) {
-      setStatus("error");
-      setStatusMessage(
-        error?.message || "The form could not be sent. Please try again."
-      );
-    }
+form.reset();
+setTurnstileToken("");
+setStatus("success");
+setStatusMessage("Thank you. Your message has been sent.");
+} catch {
+  setStatus("error");
+  setStatusMessage("The form could not be sent. Please try again.");
+}
   }
 
   return (

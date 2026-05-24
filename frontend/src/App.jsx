@@ -166,15 +166,9 @@ function App() {
           element={<EeServiceAutomatyzacjaZadan />}
         />
 
-        <Route
-          path="teenused/ai-susteemid"
-          element={<EeServiceSystemyAi />}
-        />
+        <Route path="teenused/ai-susteemid" element={<EeServiceSystemyAi />} />
 
-        <Route
-          path="teenused/crm-susteemid"
-          element={<EeServiceSystemyCrm />}
-        />
+        <Route path="teenused/crm-susteemid" element={<EeServiceSystemyCrm />} />
 
         <Route
           path="teenused/saas-rakendused"

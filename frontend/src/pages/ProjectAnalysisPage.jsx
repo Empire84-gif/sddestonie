@@ -249,17 +249,17 @@ function ProjectAnalysisPage() {
       const data = await response.json().catch(() => ({}));
 
       if (!response.ok) {
-        throw new Error(data?.error || copy.errorStatus);
-      }
+  throw new Error(copy.errorStatus);
+}
 
-      form.reset();
-      setTurnstileToken("");
-      setStatus("success");
-      setStatusMessage(data?.message || copy.successStatus);
-    } catch (error) {
-      setStatus("error");
-      setStatusMessage(error?.message || copy.errorStatus);
-    }
+form.reset();
+setTurnstileToken("");
+setStatus("success");
+setStatusMessage(copy.successStatus);
+} catch {
+  setStatus("error");
+  setStatusMessage(copy.errorStatus);
+}
   }
 
   return (
