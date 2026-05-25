@@ -8543,3 +8543,53 @@ body.mobile-menu-open .scroll-to-top {
     transform: none !important;
   }
 }
+
+/* =========================
+   FORCE BLUE BUTTONS
+   replaces navy buttons with bright SDE blue
+========================= */
+
+:root {
+  --sde-action-blue: #00a8ff;
+  --sde-action-blue-soft: #65b4ff;
+}
+
+/* Main navy buttons -> blue */
+.about-section__link,
+.automation-areas-cta__button,
+.project-analysis-form__button,
+.services-bottom-action__button:not(.services-bottom-action__button--light) {
+  background: var(--sde-action-blue) !important;
+  border-color: var(--sde-action-blue) !important;
+  color: #ffffff !important;
+}
+
+/* Hover for blue buttons */
+.about-section__link:hover,
+.automation-areas-cta__button:hover,
+.project-analysis-form__button:hover,
+.services-bottom-action__button:not(.services-bottom-action__button--light):hover {
+  background: transparent !important;
+  border-color: var(--sde-action-blue) !important;
+  color: var(--sde-action-blue) !important;
+}
+
+/* Light secondary services button hover - was navy */
+.services-bottom-action__button--light:hover {
+  background: var(--sde-action-blue) !important;
+  border-color: var(--sde-action-blue) !important;
+  color: #ffffff !important;
+}
+
+/* Optional: numbered process circles that were navy */
+.implementation-process-step > span {
+  background: var(--sde-action-blue) !important;
+  color: #ffffff !important;
+}
+
+/* Optional: cards that turned navy on hover */
+.why-card:hover,
+.service-detail-grid article:hover {
+  background: var(--sde-action-blue) !important;
+  border-color: var(--sde-action-blue) !important;
+}

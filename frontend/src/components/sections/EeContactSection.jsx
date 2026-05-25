@@ -72,7 +72,7 @@ setStatusMessage("Aitäh. Sõnum on saadetud.");
         <div className="contact-section__content">
           <p className="contact-section__kicker">Kontakt</p>
 
-          <h2>Teie konkurendid kasutavad juba AI-d. Nüüd on teie kord.</h2>
+          <h2>Teie konkurendid kasutavad juba AI-d. <br />Nüüd on teie kord.</h2>
 
           <p className="contact-section__lead">
             Kirjutage meile lühidalt, mida vajate: CRM-i, SaaS-lahendust,

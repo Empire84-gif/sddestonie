@@ -78,7 +78,7 @@ function ContactSection() {
         <div className="contact-section__content">
           <p className="contact-section__kicker">Kontakt</p>
 
-          <h2>Twoja konkurencja już korzysta z AI. Teraz czas na Ciebie.</h2>
+          <h2>Twoja konkurencja już korzysta z AI. <br />Teraz czas na Ciebie.</h2>
 
           <p className="contact-section__lead">
             Napisz do nas krótko, czego potrzebujesz: CRM, SaaS, formularza online,

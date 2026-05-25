@@ -72,7 +72,7 @@ setStatusMessage("Thank you. Your message has been sent.");
         <div className="contact-section__content">
           <p className="contact-section__kicker">Contact</p>
 
-          <h2>Your competitors are already using AI. Now it is your turn.</h2>
+          <h2>Your competitors are already using AI.<br />Now it is your turn.</h2>
 
           <p className="contact-section__lead">
             Send us a short message describing what you need: a CRM system, SaaS
