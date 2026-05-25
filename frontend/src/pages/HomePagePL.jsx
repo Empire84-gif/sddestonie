@@ -21,6 +21,8 @@ import ProcessSystemsSection from "../components/sections/ProcessSystemsSection"
 import AiDividerSection from "../components/sections/AiDividerSection";
 import ContactSection from "../components/sections/ContactSection";
 
+import PageMeta from "../components/seo/PageMeta.jsx";
+
 function HomePagePL() {
   console.log("RENDER: HomePagePL");
   const badges = [
@@ -77,10 +79,21 @@ function HomePagePL() {
 
   return (
     <>
+    <PageMeta
+  title="SDE — Dedykowane systemy IT, SaaS, CRM i automatyzacja"
+  description="SDE projektuje platformy SaaS, systemy CRM, panele administracyjne, automatyczne systemy mailowe, integracje płatności, formularze online, generatory dokumentów, dashboardy, bazy danych i praktyczne wdrożenia AI dla firm."
+  canonical="https://www.sddestonie.com/pl"
+  ogUrl="https://www.sddestonie.com/pl"
+  locale="pl_PL"
+/>
       <section className="home-hero">
-        <div className="home-hero__image" aria-hidden="true">
-          <img src={heroMain} alt="" />
-        </div>
+       <div className="home-hero__image home-hero__image--mobile" aria-hidden="true">
+  <img src={heroMobile} alt="Robot" />
+</div>
+
+<div className="home-hero__image home-hero__image--desktop" aria-hidden="true">
+  <img src={heroMain} alt="Robot" />
+</div>
 
         <div className="container home-hero__inner">
           <div className="home-hero__content">

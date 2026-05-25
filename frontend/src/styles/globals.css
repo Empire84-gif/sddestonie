@@ -8466,18 +8466,40 @@ body.mobile-menu-open .scroll-to-top {
 }
 
 /* =========================
-   HERO MOBILE IMAGE ONLY
-   desktop bez zmian
+   HERO IMAGE SWITCH
+   new mobile image on desktop + mobile
 ========================= */
 
-.home-hero__image--mobile {
+.home-hero__image--desktop {
   display: none !important;
 }
 
-.home-hero__image--desktop {
-  display: block;
+.home-hero__image--mobile {
+  display: block !important;
 }
 
+/* Desktop */
+@media (min-width: 981px) {
+  .home-hero__image--mobile {
+    position: absolute !important;
+    inset: 0 0 96px 0 !important;
+    background: var(--black) !important;
+    overflow: hidden !important;
+    z-index: 1 !important;
+  }
+
+  .home-hero__image--mobile img {
+    width: 100% !important;
+    max-width: none !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    object-position: center right !important;
+    transform: translate(-5%, 8%) scale(0.96) !important;
+    transform-origin: center right !important;
+  }
+}
+
+/* Tablet / mobile */
 @media (max-width: 980px) {
   .home-hero__image--desktop {
     display: none !important;
@@ -8485,11 +8507,39 @@ body.mobile-menu-open .scroll-to-top {
 
   .home-hero__image--mobile {
     display: block !important;
+    height: 250px !important;
+    overflow: hidden !important;
+    background: var(--black) !important;
+  }
+
+  .home-hero__image--mobile img {
+    width: 100vw !important;
+    max-width: none !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    object-position: 95% top !important;
+    transform: none !important;
   }
 }
 
-@media (max-width: 980px) {
+@media (max-width: 640px) {
+  .home-hero__image--mobile {
+    height: 240px !important;
+  }
+
   .home-hero__image--mobile img {
     object-position: 95% top !important;
+    transform: none !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .home-hero__image--mobile {
+    height: 215px !important;
+  }
+
+  .home-hero__image--mobile img {
+    object-position: 95% top !important;
+    transform: none !important;
   }
 }

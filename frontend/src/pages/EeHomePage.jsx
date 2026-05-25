@@ -21,6 +21,8 @@ import EeProcessSystemsSection from "../components/sections/EeProcessSystemsSect
 import EeAiDividerSection from "../components/sections/EeAiDividerSection.jsx";
 import EeContactSection from "../components/sections/EeContactSection.jsx";
 
+import PageMeta from "../components/seo/PageMeta.jsx";
+
 function EeHomePage() {
   console.log("RENDER: EeHomePage");
 
@@ -78,6 +80,13 @@ function EeHomePage() {
 
   return (
     <>
+    <PageMeta
+  title="SDE — Kohandatud SaaS, CRM ja äriprotsesside automatiseerimine"
+  description="SDE loob SaaS-platvorme, CRM-süsteeme, halduspaneele, automaatseid e-posti süsteeme, makselahenduste integratsioone, veebivorme, dokumendigeneraatoreid, aruandlusvaateid, andmebaase ja praktilisi AI-lahendusi ettevõtetele."
+  canonical="https://www.sddestonie.com/ee"
+  ogUrl="https://www.sddestonie.com/ee"
+  locale="et_EE"
+/>
       <section className="home-hero">
         <div className="home-hero__image home-hero__image--desktop" aria-hidden="true">
   <img src={heroMain} alt="Robot" />

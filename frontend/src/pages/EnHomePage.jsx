@@ -21,6 +21,8 @@ import EnProcessSystemsSection from "../components/sections/EnProcessSystemsSect
 import EnAiDividerSection from "../components/sections/EnAiDividerSection.jsx";
 import EnContactSection from "../components/sections/EnContactSection.jsx";
 
+import PageMeta from "../components/seo/PageMeta.jsx";
+
 function EnHomePage() {
   console.log("RENDER: EnHomePage");
 
@@ -78,6 +80,13 @@ function EnHomePage() {
 
   return (
     <>
+    <PageMeta
+  title="SDE — Custom SaaS, CRM & Business Automation Systems"
+  description="SDE designs SaaS platforms, CRM systems, admin panels, automated email systems, payment integrations, online forms, document generators, dashboards, databases and practical AI implementations for modern companies."
+  canonical="https://www.sddestonie.com/"
+  ogUrl="https://www.sddestonie.com/"
+  locale="en_US"
+/>
       <section className="home-hero">
         <div className="home-hero__image home-hero__image--desktop" aria-hidden="true">
   <img src={heroMain} alt="Robot" />
