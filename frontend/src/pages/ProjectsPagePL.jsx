@@ -551,7 +551,7 @@ const projects = [
               <div className="projects-showcase-section__cta">
                 <p>Chcesz podobny system dla swojej firmy?</p>
 
-                <Link to="/pl" state={{ scrollTo: "kontakt" }}>
+                <Link to="/pl#kontakt" state={{ scrollTo: "kontakt" }}>
                   Porozmawiajmy o projekcie
                 </Link>
               </div>

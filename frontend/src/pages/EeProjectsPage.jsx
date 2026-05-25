@@ -557,7 +557,7 @@ function EeProjectsPage() {
               <div className="projects-showcase-section__cta">
                 <p>Kas soovid oma ettevõttele sarnast süsteemi?</p>
 
-                <Link to="/ee" state={{ scrollTo: "kontakt" }}>
+                <Link to="/ee#kontakt" state={{ scrollTo: "kontakt" }}>
                   Räägime sinu projektist
                 </Link>
               </div>

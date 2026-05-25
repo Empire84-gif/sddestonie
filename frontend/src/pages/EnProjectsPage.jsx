@@ -557,7 +557,7 @@ function EnProjectsPage() {
               <div className="projects-showcase-section__cta">
                 <p>Would you like a similar system for your company?</p>
 
-                <Link to="/en" state={{ scrollTo: "kontakt" }}>
+                <Link to="/en#kontakt" state={{ scrollTo: "kontakt" }}>
                   Let’s talk about your project
                 </Link>
               </div>
