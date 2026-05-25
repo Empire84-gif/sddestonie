@@ -62,6 +62,7 @@ function PrivacyPolicyPage() {
                 <li><a href="#section-19">Marketing i kontakt z Administratorem</a></li>
                 <li><a href="#section-20">Pliki cookies</a></li>
                 <li><a href="#section-21">Logi serwera</a></li>
+                <li><a href="#section-22">Asystent AI / chatbot</a></li>
               </ol>
             </details>
           </nav>
@@ -332,6 +333,38 @@ function PrivacyPolicyPage() {
     <li>w zakresie wymaganym przepisami prawa, jeżeli mają zastosowanie.</li>
   </ul>
 
+  <h3>4.8. Dane przekazywane przez formularz opisu projektu</h3>
+
+<p>
+  W przypadku skorzystania z formularza opisu projektu dostępnego na stronie
+  internetowej, Administrator może przetwarzać dane przekazane przez użytkownika
+  w celu analizy zapytania oraz przygotowania odpowiedzi lub oferty.
+</p>
+
+<p>Zakres danych może obejmować w szczególności:</p>
+
+<ul>
+  <li>imię i nazwisko,</li>
+  <li>nazwę firmy lub organizacji,</li>
+  <li>adres e-mail,</li>
+  <li>numer telefonu,</li>
+  <li>opis działalności firmy,</li>
+  <li>opis problemu, który użytkownik chce rozwiązać,</li>
+  <li>opis obecnego procesu pracy,</li>
+  <li>informacje o narzędziach obecnie wykorzystywanych w firmie,</li>
+  <li>informacje o oczekiwanym zakresie automatyzacji lub rodzaju rozwiązania,</li>
+  <li>priorytet projektu,</li>
+  <li>dodatkowe informacje przekazane dobrowolnie w treści formularza.</li>
+</ul>
+
+<p>
+  Użytkownik powinien przekazywać wyłącznie informacje niezbędne do analizy
+  zapytania projektowego. Nie należy wpisywać do formularza danych wrażliwych,
+  danych szczególnych kategorii w rozumieniu art. 9 RODO, haseł, danych
+  płatniczych ani informacji poufnych, jeżeli nie są konieczne do przygotowania
+  odpowiedzi.
+</p>
+
   <h3>Uwagi uzupełniające</h3>
   <p>Administrator nie pozyskuje danych osobowych z niejawnych źródeł, nie prowadzi profilowania ani zautomatyzowanego podejmowania decyzji.</p>
   <p>Strona internetowa Solutions Digitales d’Estonie nie wykorzystuje plików cookies ani narzędzi analitycznych śledzących aktywność użytkowników.</p>
@@ -402,6 +435,30 @@ function PrivacyPolicyPage() {
   <h3>5.9. Brak profilowania i automatycznego podejmowania decyzji</h3>
   <p>Administrator nie prowadzi zautomatyzowanego podejmowania decyzji, w tym profilowania, w rozumieniu art. 22 RODO.</p>
   <p>Wszelkie decyzje dotyczące klientów, kontrahentów i partnerów biznesowych podejmowane są indywidualnie przez osoby upoważnione.</p>
+
+
+      <h3>5.10. Obsługa formularza opisu projektu</h3>
+
+<p>
+  Przetwarzanie danych przekazanych za pośrednictwem formularza opisu projektu
+  odbywa się w celu analizy potrzeb użytkownika, oceny możliwości realizacji
+  projektu, przygotowania odpowiedzi, przedstawienia propozycji współpracy lub
+  przygotowania oferty.
+</p>
+
+<p>Podstawa prawna:</p>
+
+<ul>
+  <li>
+    art. 6 ust. 1 lit. b RODO – podjęcie działań na żądanie osoby, której dane
+    dotyczą, przed zawarciem umowy,
+  </li>
+  <li>
+    art. 6 ust. 1 lit. f RODO – prawnie uzasadniony interes Administratora
+    polegający na obsłudze zapytań projektowych, prowadzeniu komunikacji
+    biznesowej oraz zabezpieczeniu ewentualnych roszczeń.
+  </li>
+</ul>
 </section>
 
   <section id="section-6" className="section">
@@ -649,44 +706,155 @@ function PrivacyPolicyPage() {
   <p>Administrator nie przekazuje danych osobowych poza EOG w sposób niekontrolowany ani bez odpowiedniej podstawy prawnej.</p>
 </section>
 
-  <section id="section-10" className="section">
+ <section id="section-10" className="section">
   <h2>10. Okres przechowywania danych osobowych</h2>
 
-  <p>Administrator przechowuje dane osobowe wyłącznie przez okres niezbędny do realizacji celów, dla których zostały zebrane, zgodnie z zasadą ograniczenia przechowywania określoną w art. 5 ust. 1 lit. e Rozporządzenia (UE) 2016/679 (RODO) oraz obowiązującymi przepisami prawa Republiki Estońskiej.</p>
+  <p>
+    Administrator przechowuje dane osobowe wyłącznie przez okres niezbędny do
+    realizacji celów, dla których zostały zebrane, zgodnie z zasadą ograniczenia
+    przechowywania określoną w art. 5 ust. 1 lit. e Rozporządzenia (UE) 2016/679
+    (RODO) oraz obowiązującymi przepisami prawa Republiki Estońskiej.
+  </p>
 
-  <p>Po upływie wskazanych okresów przechowywania dane osobowe są trwale usuwane, anonimizowane lub archiwizowane w sposób uniemożliwiający identyfikację osoby, chyba że przepisy prawa powszechnie obowiązującego (w szczególności podatkowe, rachunkowe lub archiwizacyjne) wymagają ich dalszego przechowywania.</p>
+  <p>
+    Po upływie wskazanych okresów przechowywania dane osobowe są trwale usuwane,
+    anonimizowane lub archiwizowane w sposób uniemożliwiający identyfikację osoby,
+    chyba że przepisy prawa powszechnie obowiązującego, w szczególności podatkowe,
+    rachunkowe lub archiwizacyjne, wymagają ich dalszego przechowywania.
+  </p>
 
   <h3>10.1. Dane klientów i kontrahentów</h3>
 
-  <p>a) Dane przetwarzane w celu przygotowania, zawarcia i realizacji umów, na podstawie art. 6 ust. 1 lit. b RODO, są przechowywane przez okres obowiązywania umowy oraz po jej zakończeniu – do czasu przedawnienia roszczeń, co do zasady nie krócej niż 3 lata, chyba że przepisy szczególne przewidują dłuższy okres.</p>
+  <p>
+    a) Dane przetwarzane w celu przygotowania, zawarcia i realizacji umów, na
+    podstawie art. 6 ust. 1 lit. b RODO, są przechowywane przez okres
+    obowiązywania umowy oraz po jej zakończeniu – do czasu przedawnienia roszczeń,
+    co do zasady nie krócej niż 3 lata, chyba że przepisy szczególne przewidują
+    dłuższy okres.
+  </p>
 
-  <p>b) Dane przetwarzane w celu bieżącego kontaktu handlowego, obsługi zapytań oraz współpracy, na podstawie art. 6 ust. 1 lit. f RODO (prawnie uzasadniony interes Administratora), są przechowywane przez okres trwania współpracy lub do czasu zakończenia kontaktu w danej sprawie.</p>
+  <p>
+    b) Dane przetwarzane w celu bieżącego kontaktu handlowego, obsługi zapytań
+    oraz współpracy, na podstawie art. 6 ust. 1 lit. f RODO, są przechowywane
+    przez okres trwania współpracy lub do czasu zakończenia kontaktu w danej
+    sprawie.
+  </p>
 
-  <p>c) Dane przetwarzane w celach rozliczeniowych, księgowych i podatkowych, na podstawie art. 6 ust. 1 lit. c RODO (obowiązek prawny), są przechowywane przez 7 lat od zakończenia roku obrotowego, zgodnie z Raamatupidamise seadus § 12–13, chyba że przepisy prawa wymagają dłuższego okresu.</p>
+  <p>
+    c) Dane przetwarzane w celach rozliczeniowych, księgowych i podatkowych, na
+    podstawie art. 6 ust. 1 lit. c RODO, są przechowywane przez 7 lat od
+    zakończenia roku obrotowego, zgodnie z Raamatupidamise seadus § 12–13, chyba
+    że przepisy prawa wymagają dłuższego okresu.
+  </p>
 
-  <p>d) Dane przetwarzane w celu ustalenia, dochodzenia lub obrony przed roszczeniami, na podstawie art. 6 ust. 1 lit. f RODO, są przechowywane do czasu przedawnienia roszczeń, co do zasady nie krócej niż 3 lata od zakończenia umowy lub kontaktu.</p>
+  <p>
+    d) Dane przetwarzane w celu ustalenia, dochodzenia lub obrony przed
+    roszczeniami, na podstawie art. 6 ust. 1 lit. f RODO, są przechowywane do
+    czasu przedawnienia roszczeń, co do zasady nie krócej niż 3 lata od
+    zakończenia umowy lub kontaktu.
+  </p>
 
   <h3>10.2. Potencjalni klienci, dostawcy i partnerzy biznesowi</h3>
 
-  <p>a) Dane osób, z którymi nawiązano kontakt w związku z ofertą współpracy lub które przekazały dane za pośrednictwem poczty elektronicznej, formularzy kontaktowych lub innych kanałów komunikacji, przetwarzane na podstawie art. 6 ust. 1 lit. f RODO, są przechowywane przez okres niezbędny do prowadzenia rozmów handlowych lub do czasu wniesienia sprzeciwu wobec przetwarzania danych, nie dłużej jednak niż 3 lata od ostatniej aktywności kontaktowej.</p>
+  <p>
+    a) Dane osób, z którymi nawiązano kontakt w związku z ofertą współpracy lub
+    które przekazały dane za pośrednictwem poczty elektronicznej, formularzy
+    kontaktowych lub innych kanałów komunikacji, przetwarzane na podstawie art. 6
+    ust. 1 lit. f RODO, są przechowywane przez okres niezbędny do prowadzenia
+    rozmów handlowych lub do czasu wniesienia sprzeciwu wobec przetwarzania
+    danych, nie dłużej jednak niż 3 lata od ostatniej aktywności kontaktowej.
+  </p>
 
-  <p>b) Dane przedstawicieli podmiotów współpracujących z Administratorem (np. w zakresie usług IT, hostingu, księgowości lub doradztwa), przetwarzane na podstawie art. 6 ust. 1 lit. b i c RODO, są przechowywane przez okres trwania współpracy oraz po jej zakończeniu – do czasu przedawnienia roszczeń (co do zasady 3 lata), natomiast dokumentacja księgowa i podatkowa – przez 7 lat, zgodnie z przepisami prawa estońskiego.</p>
+  <p>
+    b) Dane przedstawicieli podmiotów współpracujących z Administratorem, na
+    przykład w zakresie usług IT, hostingu, księgowości lub doradztwa,
+    przetwarzane na podstawie art. 6 ust. 1 lit. b i c RODO, są przechowywane
+    przez okres trwania współpracy oraz po jej zakończeniu – do czasu
+    przedawnienia roszczeń, co do zasady 3 lata, natomiast dokumentacja księgowa
+    i podatkowa – przez 7 lat, zgodnie z przepisami prawa estońskiego.
+  </p>
 
   <h3>10.3. Osoby kontaktujące się z Administratorem</h3>
-  <p>Dane osób przesyłających zapytania za pośrednictwem formularza kontaktowego, poczty elektronicznej lub telefonu, przetwarzane na podstawie art. 6 ust. 1 lit. f RODO, są przechowywane przez okres niezbędny do udzielenia odpowiedzi i zakończenia korespondencji, a następnie – jeżeli jest to uzasadnione – do czasu przedawnienia ewentualnych roszczeń, nie dłużej niż 3 lata od zakończenia kontaktu.</p>
 
-  <h3>10.4. Dane techniczne i logi systemowe</h3>
-  <p>Dane techniczne, logi serwerowe oraz informacje o zdarzeniach w systemach Administratora, przetwarzane na podstawie art. 6 ust. 1 lit. f RODO, są przechowywane przez okres niezbędny do zapewnienia bezpieczeństwa systemów, wykrywania incydentów, analizy błędów oraz zapobiegania nadużyciom, nie dłużej niż 90 dni, chyba że przepisy bezpieczeństwa IT, audytowe lub inne obowiązki prawne wymagają dłuższego okresu.</p>
+  <p>
+    Dane osób przesyłających zapytania za pośrednictwem formularza kontaktowego,
+    poczty elektronicznej lub telefonu, przetwarzane na podstawie art. 6 ust. 1
+    lit. f RODO, są przechowywane przez okres niezbędny do udzielenia odpowiedzi
+    i zakończenia korespondencji, a następnie – jeżeli jest to uzasadnione – do
+    czasu przedawnienia ewentualnych roszczeń, nie dłużej niż 3 lata od
+    zakończenia kontaktu.
+  </p>
 
-  <h3>10.5. Dane przedstawicieli organów publicznych i instytucji</h3>
-  <p>Dane pracowników lub przedstawicieli organów administracji publicznej i instytucji, z którymi Administrator prowadzi korespondencję służbową, są przechowywane przez okres niezbędny do realizacji danej sprawy oraz przez okres archiwizacyjny wynikający z obowiązujących przepisów, nie dłużej niż 10 lat od zakończenia postępowania, kontroli lub sprawy urzędowej.</p>
+  <h3>10.4. Dane z formularza opisu projektu</h3>
 
-  <h3>10.6. Postanowienia końcowe dotyczące retencji</h3>
-  <p>a) Po upływie okresów wskazanych powyżej dane osobowe są trwale usuwane, anonimizowane lub archiwizowane w sposób uniemożliwiający identyfikację osoby, zgodnie z obowiązującymi przepisami prawa.</p>
+  <p>
+    Dane przekazane za pośrednictwem formularza opisu projektu są przechowywane
+    przez okres niezbędny do analizy zapytania, przygotowania odpowiedzi,
+    prowadzenia rozmów dotyczących potencjalnej współpracy oraz przygotowania
+    oferty.
+  </p>
 
-  <p>b) Jeżeli przepisy prawa powszechnie obowiązującego wymagają dłuższego okresu przechowywania danych, okres ten może zostać odpowiednio wydłużony wyłącznie w zakresie niezbędnym do spełnienia tych obowiązków.</p>
+  <p>
+    Zakres tych danych może obejmować w szczególności imię i nazwisko, nazwę
+    firmy, adres e-mail, numer telefonu, opis działalności firmy, opis problemu,
+    opis obecnego procesu pracy, informacje o wykorzystywanych narzędziach,
+    oczekiwanym zakresie automatyzacji, typie rozwiązania, priorytecie projektu
+    oraz dodatkowe informacje przekazane dobrowolnie w formularzu.
+  </p>
 
-  <p>c) Administrator regularnie dokonuje przeglądu posiadanych danych oraz oceny zasadności ich dalszego przechowywania, zapewniając, że dane osobowe nie są przetwarzane dłużej, niż jest to konieczne dla celów, dla których zostały zebrane.</p>
+  <p>
+    Jeżeli współpraca nie zostanie nawiązana, dane mogą być przechowywane nie
+    dłużej niż 3 lata od ostatniego kontaktu, w zakresie niezbędnym do wykazania
+    przebiegu komunikacji oraz zabezpieczenia ewentualnych roszczeń.
+  </p>
+
+  <p>
+    Jeżeli w wyniku przesłania formularza dojdzie do zawarcia umowy lub
+    rozpoczęcia współpracy, dane są przechowywane zgodnie z zasadami dotyczącymi
+    danych klientów, dokumentacji umownej, rozliczeń oraz ewentualnych roszczeń.
+  </p>
+
+  <h3>10.5. Dane techniczne i logi systemowe</h3>
+
+  <p>
+    Dane techniczne, logi serwerowe oraz informacje o zdarzeniach w systemach
+    Administratora, przetwarzane na podstawie art. 6 ust. 1 lit. f RODO, są
+    przechowywane przez okres niezbędny do zapewnienia bezpieczeństwa systemów,
+    wykrywania incydentów, analizy błędów oraz zapobiegania nadużyciom, nie
+    dłużej niż 90 dni, chyba że przepisy bezpieczeństwa IT, audytowe lub inne
+    obowiązki prawne wymagają dłuższego okresu.
+  </p>
+
+  <h3>10.6. Dane przedstawicieli organów publicznych i instytucji</h3>
+
+  <p>
+    Dane pracowników lub przedstawicieli organów administracji publicznej i
+    instytucji, z którymi Administrator prowadzi korespondencję służbową, są
+    przechowywane przez okres niezbędny do realizacji danej sprawy oraz przez
+    okres archiwizacyjny wynikający z obowiązujących przepisów, nie dłużej niż 10
+    lat od zakończenia postępowania, kontroli lub sprawy urzędowej.
+  </p>
+
+  <h3>10.7. Postanowienia końcowe dotyczące retencji</h3>
+
+  <p>
+    a) Po upływie okresów wskazanych powyżej dane osobowe są trwale usuwane,
+    anonimizowane lub archiwizowane w sposób uniemożliwiający identyfikację osoby,
+    zgodnie z obowiązującymi przepisami prawa.
+  </p>
+
+  <p>
+    b) Jeżeli przepisy prawa powszechnie obowiązującego wymagają dłuższego okresu
+    przechowywania danych, okres ten może zostać odpowiednio wydłużony wyłącznie
+    w zakresie niezbędnym do spełnienia tych obowiązków.
+  </p>
+
+  <p>
+    c) Administrator regularnie dokonuje przeglądu posiadanych danych oraz oceny
+    zasadności ich dalszego przechowywania, zapewniając, że dane osobowe nie są
+    przetwarzane dłużej, niż jest to konieczne dla celów, dla których zostały
+    zebrane.
+  </p>
 </section>
 
  <section id="section-11" className="section">
@@ -1029,6 +1197,65 @@ function PrivacyPolicyPage() {
   <p>Logi serwera mogą być przechowywane przez dostawcę usług hostingowych i poczty elektronicznej Hostinger International Ltd. przez okres niezbędny do zapewnienia bezpieczeństwa, ciągłości działania usług oraz analizy incydentów technicznych, nie dłużej jednak niż przez okres uzasadniony celem ich przetwarzania, chyba że dłuższe przechowywanie jest konieczne w związku z incydentem bezpieczeństwa, analizą techniczną lub obowiązkiem wynikającym z przepisów prawa.</p>
 
   <p>Po upływie odpowiedniego okresu dane są usuwane lub anonimizowane w sposób uniemożliwiający identyfikację użytkowników.</p>
+</section>
+
+<section id="section-22" className="section">
+  <h2>22. Asystent AI / chatbot</h2>
+
+  <p>
+    Strona internetowa Solutions Digitales d’Estonie / Handke Holding OÜ może
+    udostępniać użytkownikom asystenta AI / chatbota o charakterze wyłącznie
+    informacyjnym. Asystent służy do udzielania ogólnych informacji o usługach,
+    zakresie działalności oraz możliwych rozwiązaniach technologicznych.
+  </p>
+
+  <p>
+    Asystent AI nie zastępuje indywidualnej porady prawnej, technicznej,
+    finansowej ani biznesowej. Informacje przekazywane przez asystenta mają
+    charakter ogólny i pomocniczy.
+  </p>
+
+  <p>
+    Administrator nie wykorzystuje asystenta AI w celu celowego zbierania danych
+    osobowych i nie zapisuje rozmów prowadzonych z chatbotem we własnej bazie
+    danych. Wiadomości wpisane przez użytkownika mogą być jednak technicznie
+    przetwarzane w celu wygenerowania odpowiedzi.
+  </p>
+
+  <p>
+    Użytkownik nie powinien wpisywać do chatbota danych wrażliwych, poufnych,
+    haseł, danych płatniczych, danych szczególnych kategorii w rozumieniu art. 9
+    RODO ani innych informacji, które nie są potrzebne do uzyskania ogólnej
+    informacji.
+  </p>
+
+  <p>
+    Jeżeli użytkownik dobrowolnie wpisze w wiadomości dane osobowe, takie jak
+    imię i nazwisko, adres e-mail, numer telefonu, nazwę firmy lub opis projektu,
+    dane te mogą zostać przetworzone wyłącznie w zakresie niezbędnym do
+    wygenerowania odpowiedzi przez asystenta.
+  </p>
+
+  <p>
+    Podstawą prawną takiego przetwarzania jest art. 6 ust. 1 lit. f RODO, czyli
+    prawnie uzasadniony interes Administratora polegający na udostępnieniu
+    użytkownikom narzędzia informacyjnego, ułatwieniu kontaktu oraz przedstawieniu
+    informacji o usługach.
+  </p>
+
+  <p>
+    W zależności od konfiguracji technicznej, wiadomość wpisana do chatbota może
+    być przesyłana do zewnętrznego dostawcy technologii AI/API wyłącznie w celu
+    wygenerowania odpowiedzi oraz zapewnienia bezpieczeństwa działania usługi.
+    Administrator nie wykorzystuje treści rozmów z chatbotem do profilowania
+    użytkowników ani do podejmowania wobec nich zautomatyzowanych decyzji.
+  </p>
+
+  <p>
+    W przypadku korzystania z zewnętrznego dostawcy AI/API, dane mogą być
+    przetwarzane zgodnie z zasadami przetwarzania danych tego dostawcy, w tym
+    zasadami dotyczącymi bezpieczeństwa, retencji i przeciwdziałania nadużyciom.
+  </p>
 </section>
           </div>
         </div>

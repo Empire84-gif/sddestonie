@@ -820,3 +820,144 @@ body.sde-ai-open {
     max-height: calc(100svh - 3svh - 8px) !important;
   }
 }
+
+/* =========================================================
+   CARLOS AI — INTRO MESSAGE + PRIVACY NOTE CLEAN FIX
+   Paste at the very end of ai-assistant.css
+========================================================= */
+
+/* Main messages container */
+.sde-ai-chat__messages {
+  gap: 9px !important;
+}
+
+/* General bubble reset for this section */
+.sde-ai-bubble {
+  box-sizing: border-box !important;
+  font-family: "OutfitLocal", "LatoLocal", system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+}
+
+/* First assistant message: full width intro bubble */
+.sde-ai-bubble--intro {
+  width: 100% !important;
+  max-width: 100% !important;
+  align-self: stretch !important;
+
+  padding: 12px 13px 13px !important;
+
+  border: 0.5px solid rgba(0, 0, 0, 0.13) !important;
+  border-radius: 17px !important;
+  background: #f8f8f8 !important;
+  color: #050505 !important;
+
+  box-sizing: border-box !important;
+}
+
+/* Carlos AI label inside intro */
+.sde-ai-bubble--intro .sde-ai-bubble__name {
+  margin-bottom: 6px !important;
+
+  font-size: 9.8px !important;
+  line-height: 1.35 !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase !important;
+  color: #009db7 !important;
+}
+
+/* Main intro text */
+.sde-ai-bubble--intro > p:first-of-type {
+  margin: 0 !important;
+
+  max-width: none !important;
+
+  font-size: 12.6px !important;
+  line-height: 1.52 !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.006em !important;
+  color: rgba(0, 0, 0, 0.68) !important;
+}
+
+/* Privacy note inside the same intro bubble */
+.sde-ai-bubble__privacy {
+  margin: 7px 0 0 !important;
+  padding: 0 !important;
+
+  border: 0 !important;
+
+  max-width: none !important;
+
+  font-size: 12.1px !important;
+  line-height: 1.48 !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.006em !important;
+  color: rgba(0, 0, 0, 0.58) !important;
+}
+
+/* Make normal assistant bubbles stay compact */
+.sde-ai-bubble--assistant:not(.sde-ai-bubble--intro) {
+  max-width: 88% !important;
+  align-self: flex-start !important;
+
+  border: 0.5px solid rgba(0, 0, 0, 0.14) !important;
+  background: #ffffff !important;
+  color: #050505 !important;
+}
+
+/* Normal assistant text */
+.sde-ai-bubble--assistant:not(.sde-ai-bubble--intro) p {
+  color: rgba(0, 0, 0, 0.72) !important;
+}
+
+/* User bubbles */
+.sde-ai-bubble--user {
+  max-width: 88% !important;
+  align-self: flex-end !important;
+
+  border: 0.5px solid #050505 !important;
+  background: #050505 !important;
+  color: #ffffff !important;
+}
+
+.sde-ai-bubble--user p {
+  color: rgba(255, 255, 255, 0.92) !important;
+}
+
+/* Mobile */
+@media (max-width: 760px) {
+  .sde-ai-bubble--intro {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 12px 12px 13px !important;
+    border-radius: 17px !important;
+  }
+
+  .sde-ai-bubble--intro > p:first-of-type {
+    font-size: 12.4px !important;
+    line-height: 1.5 !important;
+  }
+
+  .sde-ai-bubble__privacy {
+    margin-top: 7px !important;
+    font-size: 11.8px !important;
+    line-height: 1.45 !important;
+  }
+
+  .sde-ai-bubble--assistant:not(.sde-ai-bubble--intro),
+  .sde-ai-bubble--user {
+    max-width: 92% !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .sde-ai-bubble--intro > p:first-of-type {
+    font-size: 12.2px !important;
+    line-height: 1.48 !important;
+  }
+
+  .sde-ai-bubble__privacy {
+    font-size: 11.6px !important;
+    line-height: 1.43 !important;
+  }
+}

@@ -62,6 +62,7 @@ function EePrivacyPolicyPage() {
                 <li><a href="#section-19">Turundus ja kontakt vastutava töötlejaga</a></li>
                 <li><a href="#section-20">Küpsised</a></li>
                 <li><a href="#section-21">Serverilogid</a></li>
+                <li><a href="#section-22">AI-assistent / vestlusrobot</a></li>
               </ol>
             </details>
           </nav>
@@ -623,6 +624,37 @@ function EePrivacyPolicyPage() {
                 </li>
               </ul>
 
+              <h3>4.8. Projekti kirjelduse vormi kaudu esitatud andmed</h3>
+
+<p>
+  Kui kasutaja kasutab veebisaidil olevat projekti kirjelduse vormi, võib
+  vastutav töötleja töödelda kasutaja esitatud andmeid päringu analüüsimiseks
+  ning vastuse või pakkumise koostamiseks.
+</p>
+
+<p>Andmete ulatus võib hõlmata eelkõige järgmist:</p>
+
+<ul>
+  <li>ees- ja perekonnanimi,</li>
+  <li>ettevõtte või organisatsiooni nimi,</li>
+  <li>e-posti aadress,</li>
+  <li>telefoninumber,</li>
+  <li>ettevõtte tegevuse kirjeldus,</li>
+  <li>probleemi kirjeldus, mida kasutaja soovib lahendada,</li>
+  <li>praeguse tööprotsessi kirjeldus,</li>
+  <li>teave ettevõttes praegu kasutatavate tööriistade kohta,</li>
+  <li>teave soovitud automatiseerimise ulatuse või lahenduse tüübi kohta,</li>
+  <li>projekti prioriteet,</li>
+  <li>vormis vabatahtlikult esitatud lisateave.</li>
+</ul>
+
+<p>
+  Kasutaja peaks esitama üksnes teavet, mis on vajalik projektipäringu
+  analüüsimiseks. Vormi ei tohiks sisestada tundlikke andmeid, GDPR artikli 9
+  tähenduses eriliiki isikuandmeid, paroole, makseandmeid ega konfidentsiaalset
+  teavet, kui need ei ole vastuse koostamiseks vajalikud.
+</p>
+
               <h3>Täiendavad märkused</h3>
 
               <p>
@@ -824,6 +856,28 @@ function EePrivacyPolicyPage() {
                 Kõik klientide, lepingupartnerite ja äripartneritega seotud
                 otsused tehakse individuaalselt volitatud isikute poolt.
               </p>
+
+              <h3>5.10. Projekti kirjelduse vormi käsitlemine</h3>
+
+<p>
+  Projekti kirjelduse vormi kaudu esitatud andmeid töödeldakse kasutaja vajaduste
+  analüüsimiseks, projekti teostatavuse hindamiseks, vastuse koostamiseks,
+  koostööettepaneku esitamiseks või pakkumise koostamiseks.
+</p>
+
+<p>Õiguslik alus:</p>
+
+<ul>
+  <li>
+    GDPR artikli 6 lõike 1 punkt b – andmesubjekti taotlusel enne lepingu
+    sõlmimist võetavad meetmed,
+  </li>
+  <li>
+    GDPR artikli 6 lõike 1 punkt f – vastutava töötleja õigustatud huvi
+    projektipäringute käsitlemiseks, ärisuhtluse pidamiseks ja võimalike nõuete
+    kaitsmiseks.
+  </li>
+</ul>
             </section>
 
                         <section id="section-6" className="legal-content__section">
@@ -1501,143 +1555,161 @@ function EePrivacyPolicyPage() {
               </p>
             </section>
 
-                        <section id="section-10" className="legal-content__section">
-              <h2>10. Isikuandmete säilitamise tähtaeg</h2>
+               <section id="section-10" className="section">
+  <h2>10. Isikuandmete säilitamise periood</h2>
 
-              <p>
-                Vastutav töötleja säilitab isikuandmeid üksnes aja jooksul, mis
-                on vajalik nende eesmärkide saavutamiseks, milleks andmed
-                koguti, kooskõlas Euroopa Parlamendi ja nõukogu määruse (EL)
-                2016/679 (GDPR) artikli 5 lõike 1 punktis e sätestatud
-                säilitamise piirangu põhimõttega ning Eesti Vabariigi
-                kohaldatavate õigusaktidega.
-              </p>
+  <p>
+    Vastutav töötleja säilitab isikuandmeid üksnes nii kaua, kui see on vajalik
+    nende eesmärkide saavutamiseks, milleks andmed koguti, kooskõlas Euroopa
+    Parlamendi ja nõukogu määruse (EL) 2016/679 (GDPR) artikli 5 lõike 1 punktis
+    e sätestatud säilitamise piirangu põhimõttega ning Eesti Vabariigi
+    kohaldatavate õigusaktidega.
+  </p>
 
-              <p>
-                Pärast nimetatud säilitustähtaegade möödumist kustutatakse
-                isikuandmed püsivalt, anonüümitakse või arhiveeritakse viisil,
-                mis ei võimalda isikut tuvastada, välja arvatud juhul, kui
-                üldkohaldatavad õigusnormid, eelkõige maksu-, raamatupidamis-
-                või arhiveerimisnormid, nõuavad nende edasist säilitamist.
-              </p>
+  <p>
+    Pärast kohaldatavate säilitamisperioodide lõppu kustutatakse isikuandmed
+    lõplikult, anonüümitakse või arhiveeritakse viisil, mis ei võimalda
+    andmesubjekti tuvastamist, välja arvatud juhul, kui üldkohaldatavad
+    õigusaktid, eelkõige maksu-, raamatupidamis- või arhiveerimiskohustused,
+    nõuavad pikemat säilitamist.
+  </p>
 
-              <h3>10.1. Klientide ja lepingupartnerite andmed</h3>
+  <h3>10.1. Klientide ja lepingupartnerite andmed</h3>
 
-              <p>
-                a) Andmeid, mida töödeldakse lepingute ettevalmistamiseks,
-                sõlmimiseks ja täitmiseks GDPR-i artikli 6 lõike 1 punkti b
-                alusel, säilitatakse lepingu kehtivuse ajal ning pärast lepingu
-                lõppemist kuni nõuete aegumistähtaja möödumiseni, üldjuhul
-                vähemalt 3 aastat, välja arvatud juhul, kui erisätted näevad
-                ette pikema tähtaja.
-              </p>
+  <p>
+    a) Isikuandmeid, mida töödeldakse lepingute ettevalmistamise, sõlmimise ja
+    täitmise eesmärgil GDPR artikli 6 lõike 1 punkti b alusel, säilitatakse
+    lepingu kehtivuse ajal ning pärast lepingu lõppemist kuni võimalike nõuete
+    aegumistähtaja möödumiseni, üldjuhul mitte vähem kui 3 aastat, välja arvatud
+    juhul, kui eriseadused näevad ette pikema tähtaja.
+  </p>
 
-              <p>
-                b) Andmeid, mida töödeldakse jooksva ärikontakti, päringute
-                käsitlemise ja koostöö eesmärgil GDPR-i artikli 6 lõike 1
-                punkti f alusel ehk vastutava töötleja õigustatud huvi alusel,
-                säilitatakse koostöö kestuse ajal või kuni konkreetse asja
-                kontakt on lõppenud.
-              </p>
+  <p>
+    b) Isikuandmeid, mida töödeldakse jooksva ärisuhtluse, päringute käsitlemise
+    ja koostöö hoidmise eesmärgil GDPR artikli 6 lõike 1 punkti f alusel,
+    säilitatakse ärisuhte kestuse ajal või kuni vastava suhtluse või asja
+    lõpetamiseni.
+  </p>
 
-              <p>
-                c) Andmeid, mida töödeldakse arveldus-, raamatupidamis- ja
-                maksueesmärkidel GDPR-i artikli 6 lõike 1 punkti c alusel ehk
-                õigusliku kohustuse täitmiseks, säilitatakse 7 aastat alates
-                majandusaasta lõppemisest kooskõlas Eesti raamatupidamise
-                seaduse §-dega 12–13, välja arvatud juhul, kui õigusaktid
-                nõuavad pikemat säilitustähtaega.
-              </p>
+  <p>
+    c) Arvelduse, raamatupidamise ja maksukohustuste täitmise eesmärgil
+    töödeldavaid isikuandmeid säilitatakse GDPR artikli 6 lõike 1 punkti c alusel
+    7 aastat alates vastava majandusaasta lõpust, kooskõlas Raamatupidamise
+    seaduse §-dega 12–13, välja arvatud juhul, kui kohaldatav õigus nõuab pikemat
+    säilitamisperioodi.
+  </p>
 
-              <p>
-                d) Andmeid, mida töödeldakse nõuete kindlakstegemiseks,
-                esitamiseks või nõuete eest kaitsmiseks GDPR-i artikli 6 lõike
-                1 punkti f alusel, säilitatakse kuni nõuete aegumistähtaja
-                möödumiseni, üldjuhul vähemalt 3 aastat alates lepingu või
-                kontakti lõppemisest.
-              </p>
+  <p>
+    d) Isikuandmeid, mida töödeldakse õigusnõuete tuvastamise, esitamise või
+    kaitsmise eesmärgil GDPR artikli 6 lõike 1 punkti f alusel, säilitatakse kuni
+    kohaldatavate aegumistähtaegade möödumiseni, üldjuhul mitte vähem kui 3 aastat
+    alates lepingu lõppemisest või vastava kontakti lõpetamisest.
+  </p>
 
-              <h3>10.2. Potentsiaalsed kliendid, tarnijad ja äripartnerid</h3>
+  <h3>10.2. Potentsiaalsed kliendid, tarnijad ja äripartnerid</h3>
 
-              <p>
-                a) Isikute andmeid, kellega on võetud ühendust koostööpakkumise
-                tõttu või kes on edastanud andmeid e-posti, kontaktivormide või
-                muude suhtluskanalite kaudu ning mida töödeldakse GDPR-i
-                artikli 6 lõike 1 punkti f alusel, säilitatakse aja jooksul,
-                mis on vajalik äriläbirääkimiste pidamiseks, või kuni
-                andmetöötlusele vastuväite esitamiseni, kuid mitte kauem kui 3
-                aastat viimasest kontaktitegevusest.
-              </p>
+  <p>
+    a) Isikuandmeid isikute kohta, kellega on ühendust võetud seoses võimaliku
+    koostöö või pakkumisega, või kes on edastanud oma andmed e-posti,
+    kontaktivormi või muude suhtluskanalite kaudu, töödeldakse GDPR artikli 6
+    lõike 1 punkti f alusel ning säilitatakse aja jooksul, mis on vajalik
+    äriläbirääkimiste pidamiseks, või kuni töötlemise suhtes esitatakse vastuväide,
+    kuid mitte kauem kui 3 aastat alates viimasest kontaktist.
+  </p>
 
-              <p>
-                b) Vastutava töötlejaga koostööd tegevate üksuste esindajate
-                andmeid, näiteks IT-, hostingu-, raamatupidamis- või
-                nõustamisteenuste valdkonnas, mida töödeldakse GDPR-i artikli 6
-                lõike 1 punktide b ja c alusel, säilitatakse koostöö kestuse
-                ajal ning pärast selle lõppemist kuni nõuete aegumistähtaja
-                möödumiseni, üldjuhul 3 aastat, samas kui raamatupidamis- ja
-                maksudokumentatsiooni säilitatakse Eesti õiguse kohaselt 7
-                aastat.
-              </p>
+  <p>
+    b) Vastutava töötlejaga koostööd tegevate üksuste esindajate isikuandmeid,
+    näiteks IT-teenuste, majutuse, raamatupidamise või nõustamise valdkonnas,
+    töödeldakse GDPR artikli 6 lõike 1 punktide b ja c alusel ning säilitatakse
+    koostöö kestuse ajal ja pärast selle lõppemist kuni võimalike nõuete
+    aegumistähtaja möödumiseni, üldjuhul 3 aastat. Raamatupidamis- ja
+    maksudokumentatsiooni säilitatakse Eesti õiguse kohaselt 7 aastat.
+  </p>
 
-              <h3>10.3. Isikud, kes võtavad vastutava töötlejaga ühendust</h3>
+  <h3>10.3. Vastutava töötlejaga ühendust võtvad isikud</h3>
 
-              <p>
-                Kontaktivormi, e-posti või telefoni kaudu päringuid saatvate
-                isikute andmeid, mida töödeldakse GDPR-i artikli 6 lõike 1
-                punkti f alusel, säilitatakse aja jooksul, mis on vajalik
-                vastuse andmiseks ja kirjavahetuse lõpetamiseks, ning seejärel,
-                kui see on põhjendatud, kuni võimalike nõuete aegumistähtaja
-                möödumiseni, kuid mitte kauem kui 3 aastat kontakti
-                lõppemisest.
-              </p>
+  <p>
+    Kontaktivormi, e-posti või telefoni teel päringuid esitavate isikute
+    isikuandmeid, mida töödeldakse GDPR artikli 6 lõike 1 punkti f alusel,
+    säilitatakse aja jooksul, mis on vajalik päringule vastamiseks ja kirjavahetuse
+    lõpetamiseks. Kui see on põhjendatud, võib selliseid andmeid seejärel
+    säilitada võimalike nõuete aegumistähtaja möödumiseni, kuid mitte kauem kui 3
+    aastat alates kontakti lõppemisest.
+  </p>
 
-              <h3>10.4. Tehnilised andmed ja süsteemilogid</h3>
+  <h3>10.4. Projekti kirjelduse vormi kaudu esitatud andmed</h3>
 
-              <p>
-                Tehnilisi andmeid, serveriloge ja teavet vastutava töötleja
-                süsteemides toimunud sündmuste kohta, mida töödeldakse GDPR-i
-                artikli 6 lõike 1 punkti f alusel, säilitatakse aja jooksul,
-                mis on vajalik süsteemide turvalisuse tagamiseks, intsidentide
-                avastamiseks, vigade analüüsimiseks ja väärkasutuse
-                ennetamiseks, kuid mitte kauem kui 90 päeva, välja arvatud
-                juhul, kui IT-turbe, auditi või muud õiguslikud kohustused
-                nõuavad pikemat tähtaega.
-              </p>
+  <p>
+    Projekti kirjelduse vormi kaudu esitatud andmeid säilitatakse aja jooksul,
+    mis on vajalik päringu analüüsimiseks, vastuse koostamiseks, võimaliku koostöö
+    arutamiseks ning pakkumise ettevalmistamiseks.
+  </p>
 
-              <h3>10.5. Avalike asutuste ja institutsioonide esindajate andmed</h3>
+  <p>
+    Selliste andmete ulatus võib hõlmata eelkõige ees- ja perekonnanime, ettevõtte
+    nime, e-posti aadressi, telefoninumbrit, ettevõtte tegevuse kirjeldust,
+    lahendatava probleemi kirjeldust, praeguse tööprotsessi kirjeldust, teavet
+    praegu kasutatavate tööriistade kohta, soovitud automatiseerimise ulatust,
+    lahenduse tüüpi, projekti prioriteeti ning vormis vabatahtlikult esitatud
+    lisateavet.
+  </p>
 
-              <p>
-                Avaliku halduse asutuste ja institutsioonide töötajate või
-                esindajate andmeid, kellega vastutav töötleja peab ametlikku
-                kirjavahetust, säilitatakse aja jooksul, mis on vajalik
-                konkreetse asja lahendamiseks, ning kohaldatavatest õigusaktidest
-                tuleneva arhiveerimistähtaja jooksul, kuid mitte kauem kui 10
-                aastat menetluse, kontrolli või ametliku asja lõppemisest.
-              </p>
+  <p>
+    Kui koostööd ei alustata, võib andmeid säilitada mitte kauem kui 3 aastat
+    alates viimasest kontaktist ulatuses, mis on vajalik suhtluse käigu
+    tõendamiseks ja võimalike nõuete kaitsmiseks.
+  </p>
 
-              <h3>10.6. Säilitamist puudutavad lõppsätted</h3>
+  <p>
+    Kui vormi esitamine viib lepingu sõlmimiseni või koostöö alustamiseni,
+    säilitatakse andmeid vastavalt klientide andmete, lepingudokumentatsiooni,
+    arvelduse ning võimalike nõuetega seotud säilitamisreeglitele.
+  </p>
 
-              <p>
-                a) Pärast eespool nimetatud tähtaegade möödumist kustutatakse
-                isikuandmed püsivalt, anonüümitakse või arhiveeritakse viisil,
-                mis ei võimalda isikut tuvastada, kooskõlas kohaldatavate
-                õigusaktidega.
-              </p>
+  <h3>10.5. Tehnilised andmed ja süsteemilogid</h3>
 
-              <p>
-                b) Kui üldkohaldatavad õigusnormid nõuavad andmete pikemat
-                säilitamist, võib säilitustähtaega vastavalt pikendada üksnes
-                ulatuses, mis on vajalik nende kohustuste täitmiseks.
-              </p>
+  <p>
+    Tehnilisi andmeid, serverilogisid ning teavet vastutava töötleja süsteemides
+    toimunud sündmuste kohta, mida töödeldakse GDPR artikli 6 lõike 1 punkti f
+    alusel, säilitatakse aja jooksul, mis on vajalik süsteemide turvalisuse
+    tagamiseks, intsidentide tuvastamiseks, vigade analüüsimiseks ja väärkasutuse
+    ennetamiseks, kuid mitte kauem kui 90 päeva, välja arvatud juhul, kui
+    IT-turvalisuse, auditi või muud õiguslikud kohustused nõuavad pikemat
+    säilitamisperioodi.
+  </p>
 
-              <p>
-                c) Vastutav töötleja vaatab regulaarselt üle tema valduses
-                olevad andmed ning hindab nende edasise säilitamise põhjendatust,
-                tagades, et isikuandmeid ei töödelda kauem, kui see on vajalik
-                nende eesmärkide saavutamiseks, milleks need koguti.
-              </p>
-            </section>
+  <h3>10.6. Avaliku võimu asutuste ja institutsioonide esindajate andmed</h3>
+
+  <p>
+    Avaliku võimu asutuste ja institutsioonide töötajate või esindajate
+    isikuandmeid, kellega vastutav töötleja peab ametlikku kirjavahetust,
+    säilitatakse aja jooksul, mis on vajalik vastava asja käsitlemiseks, ning
+    kohaldatava õiguse alusel nõutava arhiveerimisperioodi jooksul, kuid mitte
+    kauem kui 10 aastat alates vastava menetluse, kontrolli või ametliku asja
+    lõppemisest.
+  </p>
+
+  <h3>10.7. Säilitamist puudutavad lõppsätted</h3>
+
+  <p>
+    a) Pärast eespool nimetatud säilitamisperioodide lõppu kustutatakse
+    isikuandmed lõplikult, anonüümitakse või arhiveeritakse viisil, mis ei
+    võimalda andmesubjekti tuvastamist, kooskõlas kohaldatava õigusega.
+  </p>
+
+  <p>
+    b) Kui üldkohaldatav õigus nõuab pikemat säilitamisperioodi, võib seda perioodi
+    pikendada üksnes ulatuses, mis on vajalik vastavate õiguslike kohustuste
+    täitmiseks.
+  </p>
+
+  <p>
+    c) Vastutav töötleja vaatab regulaarselt üle tema valduses olevad
+    isikuandmed ja hindab nende edasise säilitamise põhjendatust, tagades, et
+    isikuandmeid ei töödelda kauem, kui see on vajalik eesmärkide jaoks, milleks
+    need koguti.
+  </p>
+</section>
 
             <section id="section-11" className="legal-content__section">
               <h2>11. Isikuandmete esitamise vabatahtlikkus</h2>
@@ -2534,6 +2606,62 @@ function EePrivacyPolicyPage() {
                 anonüümitakse viisil, mis ei võimalda kasutajaid tuvastada.
               </p>
             </section>
+
+            <section id="section-22" className="section">
+  <h2>22. AI-assistent / vestlusrobot</h2>
+
+  <p>
+    Solutions Digitales d’Estonie / Handke Holding OÜ veebisait võib pakkuda
+    kasutajatele AI-assistenti / vestlusrobotit üksnes informatiivsel eesmärgil.
+    Assistent aitab anda üldist teavet teenuste, tegevusvaldkonna ja võimalike
+    tehnoloogiliste lahenduste kohta.
+  </p>
+
+  <p>
+    AI-assistent ei asenda individuaalset õiguslikku, tehnilist, finants- ega
+    ärinõustamist. Assistendi esitatud teave on üldise ja abistava iseloomuga.
+  </p>
+
+  <p>
+    Vastutav töötleja ei kasuta AI-assistenti isikuandmete sihipäraseks kogumiseks
+    ega salvesta vestlusrobotiga peetud vestlusi oma andmebaasi. Kasutaja sisestatud
+    sõnumeid võidakse siiski tehniliselt töödelda vastuse genereerimise eesmärgil.
+  </p>
+
+  <p>
+    Kasutaja ei tohiks vestlusroboti kaudu edastada tundlikke andmeid,
+    konfidentsiaalset teavet, paroole, makseandmeid, GDPR artikli 9 tähenduses
+    eriliiki isikuandmeid ega muud teavet, mis ei ole üldise teabe saamiseks
+    vajalik.
+  </p>
+
+  <p>
+    Kui kasutaja lisab sõnumisse vabatahtlikult isikuandmeid, näiteks nime,
+    e-posti aadressi, telefoninumbri, ettevõtte nime või projekti kirjelduse,
+    võidakse neid andmeid töödelda üksnes ulatuses, mis on vajalik assistendi
+    vastuse genereerimiseks.
+  </p>
+
+  <p>
+    Sellise töötlemise õiguslik alus on GDPR artikli 6 lõike 1 punkt f, st
+    vastutava töötleja õigustatud huvi pakkuda kasutajatele informatiivset
+    tööriista, lihtsustada kontakti ning esitada teavet teenuste kohta.
+  </p>
+
+  <p>
+    Sõltuvalt tehnilisest konfiguratsioonist võib vestlusrobotisse sisestatud
+    sõnum edastada välisele AI/API tehnoloogia pakkujale üksnes vastuse
+    genereerimise ja teenuse turvalisuse tagamise eesmärgil. Vastutav töötleja ei
+    kasuta vestlusrobotiga peetud vestlusi kasutajate profileerimiseks ega nende
+    suhtes automatiseeritud otsuste tegemiseks.
+  </p>
+
+  <p>
+    Kui kasutatakse välist AI/API teenusepakkujat, võib andmeid töödelda vastavalt
+    selle teenusepakkuja andmetöötluse reeglitele, sealhulgas turvalisuse,
+    säilitamise ja väärkasutuse ennetamise põhimõtetele.
+  </p>
+</section>
           </div>
         </div>
       </section>

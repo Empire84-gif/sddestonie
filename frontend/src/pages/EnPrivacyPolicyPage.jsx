@@ -64,6 +64,7 @@ function EnPrivacyPolicyPage() {
                 <li><a href="#section-19">Marketing and contact with the Controller</a></li>
                 <li><a href="#section-20">Cookies</a></li>
                 <li><a href="#section-21">Server logs</a></li>
+                <li><a href="#section-22">AI assistant / chatbot</a></li>
               </ol>
             </details>
           </nav>
@@ -630,6 +631,37 @@ function EnPrivacyPolicyPage() {
                 </li>
               </ul>
 
+              <h3>4.8. Data submitted through the project description form</h3>
+
+<p>
+  When using the project description form available on the website, the
+  Controller may process data submitted by the user in order to analyse the
+  inquiry and prepare a response or offer.
+</p>
+
+<p>The scope of data may include in particular:</p>
+
+<ul>
+  <li>full name,</li>
+  <li>company or organisation name,</li>
+  <li>e-mail address,</li>
+  <li>phone number,</li>
+  <li>description of the company’s activity,</li>
+  <li>description of the problem the user wants to solve,</li>
+  <li>description of the current work process,</li>
+  <li>information about tools currently used by the company,</li>
+  <li>information about the expected automation scope or type of solution,</li>
+  <li>project priority,</li>
+  <li>additional information voluntarily provided in the form.</li>
+</ul>
+
+<p>
+  The user should provide only information necessary to analyse the project
+  inquiry. Sensitive data, special categories of personal data within the meaning
+  of Article 9 GDPR, passwords, payment details or confidential information should
+  not be entered into the form unless they are necessary to prepare a response.
+</p>
+
               <h3>Additional notes</h3>
 
               <p>
@@ -829,8 +861,30 @@ function EnPrivacyPolicyPage() {
                 All decisions concerning clients, contractors and business
                 partners are made individually by authorised persons.
               </p>
-            </section>
+           
 
+            <h3>5.10. Handling of the project description form</h3>
+
+<p>
+  Data submitted through the project description form is processed in order to
+  analyse the user’s needs, assess the feasibility of the project, prepare a
+  response, present a cooperation proposal or prepare an offer.
+</p>
+
+<p>Legal basis:</p>
+
+<ul>
+  <li>
+    Article 6(1)(b) GDPR – taking steps at the request of the data subject prior
+    to entering into a contract,
+  </li>
+  <li>
+    Article 6(1)(f) GDPR – the legitimate interest of the Controller in handling
+    project inquiries, conducting business communication and securing potential
+    claims.
+  </li>
+</ul>
+ </section>
             <section id="section-6" className="legal-content__section">
               <h2>6. Legal bases for processing personal data</h2>
 
@@ -1515,139 +1569,157 @@ function EnPrivacyPolicyPage() {
               </p>
             </section>
 
-                        <section id="section-10" className="legal-content__section">
-              <h2>10. Personal data retention period</h2>
+            <section id="section-10" className="section">
+  <h2>10. Retention of Personal Data</h2>
 
-              <p>
-                The Controller stores personal data only for the period
-                necessary to achieve the purposes for which it was collected,
-                in accordance with the storage limitation principle set out in
-                Article 5(1)(e) of Regulation (EU) 2016/679 (GDPR) and the
-                applicable laws of the Republic of Estonia.
-              </p>
+  <p>
+    The Controller retains personal data only for as long as necessary to fulfill
+    the purposes for which it was collected, in accordance with the storage
+    limitation principle set out in Article 5(1)(e) of Regulation (EU) 2016/679
+    (GDPR) and the applicable laws of the Republic of Estonia.
+  </p>
 
-              <p>
-                After the indicated retention periods have expired, personal
-                data is permanently deleted, anonymised or archived in a manner
-                that prevents identification of the person, unless generally
-                applicable legal provisions, in particular tax, accounting or
-                archiving regulations, require further storage.
-              </p>
+  <p>
+    After the applicable retention periods expire, personal data is permanently
+    deleted, anonymized, or archived in a manner that prevents the identification
+    of the data subject, unless generally applicable legal requirements, in
+    particular tax, accounting, or archiving obligations, require longer retention.
+  </p>
 
-              <h3>10.1. Data of clients and contractors</h3>
+  <h3>10.1. Client and Contractor Data</h3>
 
-              <p>
-                a) Data processed for the purpose of preparing, concluding and
-                performing contracts, on the basis of Article 6(1)(b) GDPR, is
-                stored for the duration of the contract and, after its
-                termination, until the limitation period for claims expires, as
-                a rule for no less than 3 years, unless specific provisions
-                provide for a longer period.
-              </p>
+  <p>
+    a) Personal data processed for the purpose of preparing, entering into, and
+    performing agreements, on the basis of Article 6(1)(b) GDPR, is retained for
+    the duration of the agreement and, after its termination, until the expiry of
+    applicable limitation periods for potential claims, generally for no less than
+    3 years, unless specific laws provide for a longer period.
+  </p>
 
-              <p>
-                b) Data processed for the purpose of ongoing business contact,
-                handling inquiries and cooperation, on the basis of Article
-                6(1)(f) GDPR — the Controller’s legitimate interest — is stored
-                for the duration of the cooperation or until the contact in a
-                given matter has ended.
-              </p>
+  <p>
+    b) Personal data processed for ongoing business communication, handling
+    inquiries, and maintaining cooperation, on the basis of Article 6(1)(f) GDPR,
+    is retained for the duration of the business relationship or until the
+    relevant communication matter has been completed.
+  </p>
 
-              <p>
-                c) Data processed for settlement, accounting and tax purposes,
-                on the basis of Article 6(1)(c) GDPR — legal obligation — is
-                stored for 7 years from the end of the financial year, in
-                accordance with § 12–13 of the Estonian Accounting Act —
-                Raamatupidamise seadus, unless the law requires a longer
-                period.
-              </p>
+  <p>
+    c) Personal data processed for billing, accounting, and tax purposes, on the
+    basis of Article 6(1)(c) GDPR, is retained for 7 years from the end of the
+    relevant financial year, in accordance with Sections 12–13 of the Estonian
+    Accounting Act (Raamatupidamise seadus), unless applicable law requires a
+    longer retention period.
+  </p>
 
-              <p>
-                d) Data processed for the purpose of establishing, pursuing or
-                defending claims, on the basis of Article 6(1)(f) GDPR, is
-                stored until the limitation period for claims expires, as a rule
-                for no less than 3 years from the end of the contract or
-                contact.
-              </p>
+  <p>
+    d) Personal data processed for the establishment, exercise, or defense of
+    legal claims, on the basis of Article 6(1)(f) GDPR, is retained until the
+    expiry of applicable limitation periods, generally for no less than 3 years
+    from the termination of the agreement or the end of the relevant contact.
+  </p>
 
-              <h3>10.2. Potential clients, suppliers and business partners</h3>
+  <h3>10.2. Prospective Clients, Suppliers, and Business Partners</h3>
 
-              <p>
-                a) Data of persons who have been contacted in connection with an
-                offer of cooperation or who have provided data via email,
-                contact forms or other communication channels, processed on the
-                basis of Article 6(1)(f) GDPR, is stored for the period
-                necessary to conduct business discussions or until an objection
-                to the processing of data is lodged, but no longer than 3 years
-                from the last contact activity.
-              </p>
+  <p>
+    a) Personal data of individuals contacted in connection with a potential
+    business opportunity, or individuals who provide their data through e-mail,
+    contact forms, or other communication channels, processed on the basis of
+    Article 6(1)(f) GDPR, is retained for the period necessary to conduct business
+    discussions or until an objection to the processing is submitted, but no
+    longer than 3 years from the last contact activity.
+  </p>
 
-              <p>
-                b) Data of representatives of entities cooperating with the
-                Controller, for example in the field of IT services, hosting,
-                accounting or advisory services, processed on the basis of
-                Article 6(1)(b) and Article 6(1)(c) GDPR, is stored for the
-                duration of the cooperation and, after its termination, until
-                the limitation period for claims expires, as a rule for 3
-                years, while accounting and tax documentation is stored for 7
-                years in accordance with Estonian law.
-              </p>
+  <p>
+    b) Personal data of representatives of entities cooperating with the
+    Controller, for example in the areas of IT services, hosting, accounting, or
+    advisory services, processed on the basis of Article 6(1)(b) and Article
+    6(1)(c) GDPR, is retained for the duration of the cooperation and, after its
+    termination, until the expiry of applicable limitation periods, generally 3
+    years. Accounting and tax documentation is retained for 7 years in accordance
+    with Estonian law.
+  </p>
 
-              <h3>10.3. Persons contacting the Controller</h3>
+  <h3>10.3. Individuals Contacting the Controller</h3>
 
-              <p>
-                Data of persons sending inquiries via a contact form, email or
-                telephone, processed on the basis of Article 6(1)(f) GDPR, is
-                stored for the period necessary to provide a response and close
-                the correspondence, and subsequently, where justified, until the
-                limitation period for potential claims expires, but no longer
-                than 3 years from the end of the contact.
-              </p>
+  <p>
+    Personal data of individuals submitting inquiries through the contact form,
+    by e-mail, or by phone, processed on the basis of Article 6(1)(f) GDPR, is
+    retained for the period necessary to respond to the inquiry and complete the
+    correspondence. Where justified, such data may subsequently be retained until
+    the expiry of potential claims, but no longer than 3 years from the end of the
+    contact.
+  </p>
 
-              <h3>10.4. Technical data and system logs</h3>
+  <h3>10.4. Data Submitted Through the Project Description Form</h3>
 
-              <p>
-                Technical data, server logs and information about events in the
-                Controller’s systems, processed on the basis of Article 6(1)(f)
-                GDPR, are stored for the period necessary to ensure system
-                security, detect incidents, analyse errors and prevent abuse,
-                but no longer than 90 days, unless IT security, audit-related
-                provisions or other legal obligations require a longer period.
-              </p>
+  <p>
+    Personal data submitted through the project description form is retained for
+    the period necessary to analyze the inquiry, prepare a response, conduct
+    discussions regarding potential cooperation, and prepare an offer.
+  </p>
 
-              <h3>10.5. Data of representatives of public authorities and institutions</h3>
+  <p>
+    The scope of such data may include, in particular, full name, company name,
+    e-mail address, phone number, description of the company’s activity,
+    description of the problem to be solved, description of the current work
+    process, information about tools currently used, expected scope of
+    automation, type of solution, project priority, and any additional information
+    voluntarily provided in the form.
+  </p>
 
-              <p>
-                Data of employees or representatives of public administration
-                bodies and institutions with whom the Controller conducts
-                official correspondence is stored for the period necessary to
-                handle the given matter and for the archiving period resulting
-                from applicable regulations, but no longer than 10 years from
-                the end of the proceedings, inspection or official matter.
-              </p>
+  <p>
+    If cooperation is not established, the data may be retained for no longer
+    than 3 years from the last contact, to the extent necessary to document the
+    course of communication and secure potential claims.
+  </p>
 
-              <h3>10.6. Final provisions regarding retention</h3>
+  <p>
+    If submitting the form leads to the conclusion of an agreement or the start
+    of cooperation, the data is retained in accordance with the rules applicable
+    to client data, contractual documentation, billing, and potential claims.
+  </p>
 
-              <p>
-                a) After the periods indicated above have expired, personal data
-                is permanently deleted, anonymised or archived in a manner that
-                prevents identification of the person, in accordance with
-                applicable law.
-              </p>
+  <h3>10.5. Technical Data and System Logs</h3>
 
-              <p>
-                b) If generally applicable legal provisions require a longer
-                retention period, that period may be extended accordingly only
-                to the extent necessary to comply with those obligations.
-              </p>
+  <p>
+    Technical data, server logs, and information about events in the Controller’s
+    systems, processed on the basis of Article 6(1)(f) GDPR, are retained for the
+    period necessary to ensure system security, detect incidents, analyze errors,
+    and prevent abuse, but no longer than 90 days, unless IT security, audit, or
+    other legal obligations require a longer retention period.
+  </p>
 
-              <p>
-                c) The Controller regularly reviews the data it holds and
-                assesses whether its further storage remains justified, ensuring
-                that personal data is not processed for longer than necessary
-                for the purposes for which it was collected.
-              </p>
-            </section>
+  <h3>10.6. Data of Representatives of Public Authorities and Institutions</h3>
+
+  <p>
+    Personal data of employees or representatives of public authorities and
+    institutions with whom the Controller conducts official correspondence is
+    retained for the period necessary to handle the relevant matter and for the
+    archiving period required by applicable law, but no longer than 10 years from
+    the conclusion of the relevant proceeding, inspection, or official matter.
+  </p>
+
+  <h3>10.7. Final Provisions on Data Retention</h3>
+
+  <p>
+    a) After the retention periods specified above expire, personal data is
+    permanently deleted, anonymized, or archived in a manner that prevents the
+    identification of the data subject, in accordance with applicable law.
+  </p>
+
+  <p>
+    b) If generally applicable law requires a longer retention period, that period
+    may be extended only to the extent necessary to comply with such legal
+    obligations.
+  </p>
+
+  <p>
+    c) The Controller regularly reviews the personal data it holds and assesses
+    whether continued retention remains justified, ensuring that personal data is
+    not processed for longer than necessary for the purposes for which it was
+    collected.
+  </p>
+</section>
 
             <section id="section-11" className="legal-content__section">
               <h2>11. Voluntary provision of personal data</h2>
@@ -2567,7 +2639,63 @@ function EnPrivacyPolicyPage() {
               </p>
             </section>
 
-      
+      <section id="section-22" className="section">
+  <h2>22. AI assistant / chatbot</h2>
+
+  <p>
+    The website of Solutions Digitales d’Estonie / Handke Holding OÜ may provide
+    users with an AI assistant / chatbot for informational purposes only. The
+    assistant is intended to provide general information about the services, scope
+    of activity and possible technology solutions.
+  </p>
+
+  <p>
+    The AI assistant does not replace individual legal, technical, financial or
+    business advice. The information provided by the assistant is general and
+    supportive in nature.
+  </p>
+
+  <p>
+    The Controller does not use the AI assistant for the purpose of intentionally
+    collecting personal data and does not store chatbot conversations in its own
+    database. However, messages entered by the user may be technically processed
+    in order to generate a response.
+  </p>
+
+  <p>
+    Users should not enter sensitive data, confidential information, passwords,
+    payment details, special categories of personal data within the meaning of
+    Article 9 GDPR, or any other information that is not necessary to obtain
+    general information.
+  </p>
+
+  <p>
+    If a user voluntarily includes personal data in a message, such as name,
+    e-mail address, phone number, company name or project description, such data
+    may be processed only to the extent necessary to generate a response by the
+    assistant.
+  </p>
+
+  <p>
+    The legal basis for such processing is Article 6(1)(f) GDPR, namely the
+    legitimate interest of the Controller in providing users with an informational
+    tool, facilitating contact and presenting information about the services.
+  </p>
+
+  <p>
+    Depending on the technical configuration, a message entered into the chatbot
+    may be transmitted to an external AI/API technology provider solely for the
+    purpose of generating a response and ensuring the security of the service.
+    The Controller does not use chatbot conversations to profile users or to make
+    automated decisions concerning them.
+  </p>
+
+  <p>
+    Where an external AI/API provider is used, data may be processed in accordance
+    with that provider’s data processing rules, including rules on security,
+    retention and abuse prevention.
+  </p>
+</section>
           </div>
         </div>
       </section>

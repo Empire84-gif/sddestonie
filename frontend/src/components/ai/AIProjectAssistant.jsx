@@ -26,7 +26,9 @@ const assistantCopy = {
     backendError:
       "Carlos AI is not connected to the backend right now. Please check the API configuration or try again later.",
     initialMessage:
-      "I’m Carlos AI — SDE’s project assistant. Briefly describe the process that currently takes too much time, and I’ll help you understand whether the right direction is CRM, SaaS, automation, dashboard, document generator, API integration or an AI-supported solution.",
+      "I’m Carlos AI — SDE’s project assistant. Describe what takes too much time in your company, and I’ll suggest a practical direction: CRM, SaaS, automation, dashboard, document generator, API integration or AI-supported solution.",
+    privacyNotice:
+      "Informational assistant only. Please do not enter sensitive data, passwords, payment details or confidential information.",
     quickPrompts: [
       "I want to organize clients and the sales process.",
       "We have too much manual data entry.",
@@ -52,7 +54,9 @@ const assistantCopy = {
     backendError:
       "Carlos AI-l puudub hetkel ühendus backendiga. Kontrolli API seadistust või proovi hiljem uuesti.",
     initialMessage:
-      "Olen Carlos AI — SDE projektiassistent. Kirjelda lühidalt protsessi, mis võtab praegu liiga palju aega, ja aitan hinnata, kas õige suund on CRM, SaaS, automatiseerimine, dashboard, dokumendigeneraator, API-integratsioon või AI-toega lahendus.",
+      "Olen Carlos AI — SDE projektiassistent. Kirjelda, mis võtab sinu ettevõttes liiga palju aega, ja aitan hinnata praktilist suunda: CRM, SaaS, automatiseerimine, dashboard, dokumendigeneraator, API-integratsioon või AI-toega lahendus.",
+    privacyNotice:
+      "Ainult informatiivne assistent. Palun ära sisesta tundlikke andmeid, paroole, makseandmeid ega konfidentsiaalset teavet.",
     quickPrompts: [
       "Soovin korrastada kliendid ja müügiprotsessi.",
       "Meil on liiga palju käsitsi andmete sisestamist.",
@@ -78,7 +82,9 @@ const assistantCopy = {
     backendError:
       "Nie mam teraz połączenia z backendem AI. Sprawdź konfigurację API albo spróbuj ponownie za chwilę.",
     initialMessage:
-      "Jestem Carlos AI — asystent projektowy SDE. Opisz krótko proces, który dziś zajmuje zbyt dużo czasu, a pomogę określić, czy lepszym kierunkiem będzie CRM, SaaS, automatyzacja, dashboard, generator dokumentów, integracja API albo rozwiązanie AI.",
+      "Jestem Carlos AI — asystent projektowy SDE. Opisz, co w Twojej firmie zajmuje za dużo czasu, a pomogę wskazać praktyczny kierunek: CRM, SaaS, automatyzacja, dashboard, generator dokumentów, integracja API albo rozwiązanie AI.",
+    privacyNotice:
+      "Asystent ma charakter informacyjny. Nie wpisuj danych wrażliwych, haseł, danych płatniczych ani poufnych informacji.",
     quickPrompts: [
       "Chcę uporządkować klientów i proces sprzedaży.",
       "Mam za dużo ręcznego przepisywania danych.",
@@ -133,9 +139,7 @@ function AIProjectAssistant() {
   const paths = languagePaths[language];
 
   const [isOpen, setIsOpen] = useState(false);
-  const [messages, setMessages] = useState(() => [
-    createInitialMessage(copy),
-  ]);
+  const [messages, setMessages] = useState(() => [createInitialMessage(copy)]);
   const [inputValue, setInputValue] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [connectionError, setConnectionError] = useState("");
@@ -405,18 +409,29 @@ function AIProjectAssistant() {
 
           <div className="sde-ai-chat">
             <div className="sde-ai-chat__messages" aria-live="polite">
-              {messages.map((message, index) => (
-                <div
-                  key={`${message.role}-${index}`}
-                  className={`sde-ai-bubble sde-ai-bubble--${message.role}`}
-                >
-                  {message.role === "assistant" && (
-                    <span className="sde-ai-bubble__name">Carlos AI</span>
-                  )}
+              {messages.map((message, index) => {
+  const isInitialAssistantMessage =
+    message.role === "assistant" && index === 0 && messages.length === 1;
 
-                  <p>{message.content}</p>
-                </div>
-              ))}
+  return (
+    <div
+      key={`${message.role}-${index}`}
+      className={`sde-ai-bubble sde-ai-bubble--${message.role} ${
+        isInitialAssistantMessage ? "sde-ai-bubble--intro" : ""
+      }`}
+    >
+      {message.role === "assistant" && (
+        <span className="sde-ai-bubble__name">Carlos AI</span>
+      )}
+
+      <p>{message.content}</p>
+
+      {isInitialAssistantMessage && (
+        <p className="sde-ai-bubble__privacy">{copy.privacyNotice}</p>
+      )}
+    </div>
+  );
+})}
 
               {isLoading && (
                 <div className="sde-ai-bubble sde-ai-bubble--assistant">
