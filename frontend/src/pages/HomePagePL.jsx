@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 
 import heroMain from "../assets/images/hero-main.png";
+import heroMobile from "../assets/images/hero-mobile.png";
 
 import logoBadge from "../assets/images/logo.png";
 import madeInEstoniaBadge from "../assets/images/madeinestonia-pl.png";
@@ -83,19 +84,19 @@ function HomePagePL() {
 
         <div className="container home-hero__inner">
           <div className="home-hero__content">
-            <p className="home-hero__kicker">
-              SDE · Custom Software · SaaS · CRM · AI Automation
-            </p>
+       <p className="home-hero__kicker">
+  SDE · Custom SaaS · CRM · Automatyzacja · AI · Płatności
+</p>
 
-            <h1>Dedykowane systemy IT dla nowoczesnych firm</h1>
+<h1>Systemy IT, które automatyzują codzienną pracę firmy</h1>
 
-            <p className="home-hero__text">
-              Tworzymy dedykowane systemy SaaS, CRM, panele administracyjne,
-              automatyzacje procesów, generatory dokumentów oraz praktyczne
-              integracje AI dopasowane do sposobu pracy Twojej firmy. Naszą
-              misją jest wspierać rozwój firm poprzez technologię, która realnie
-              działa.
-            </p>
+<p className="home-hero__text">
+  Projektujemy platformy SaaS, systemy CRM, panele administracyjne,
+  automatyczne systemy mailowe, integracje płatności, formularze online,
+  generatory dokumentów, dashboardy, bazy danych oraz praktyczne wdrożenia AI.
+  SDE tworzy narzędzia, które porządkują procesy, ograniczają ręczną pracę
+  i wspierają codzienne działanie firmy w jednym spójnym systemie.
+</p>
 
             <div className="home-hero__actions">
               <Link to="/pl/opisz-projekt" className="hero-btn hero-btn--primary">

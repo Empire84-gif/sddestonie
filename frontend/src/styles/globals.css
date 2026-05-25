@@ -8464,3 +8464,32 @@ body.mobile-menu-open .scroll-to-top {
     padding-bottom: 20px;
   }
 }
+
+/* =========================
+   HERO MOBILE IMAGE ONLY
+   desktop bez zmian
+========================= */
+
+.home-hero__image--mobile {
+  display: none !important;
+}
+
+.home-hero__image--desktop {
+  display: block;
+}
+
+@media (max-width: 980px) {
+  .home-hero__image--desktop {
+    display: none !important;
+  }
+
+  .home-hero__image--mobile {
+    display: block !important;
+  }
+}
+
+@media (max-width: 980px) {
+  .home-hero__image--mobile img {
+    object-position: 95% top !important;
+  }
+}

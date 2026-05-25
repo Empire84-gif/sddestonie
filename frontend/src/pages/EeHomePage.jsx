@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 
 import heroMain from "../assets/images/hero-main.png";
+import heroMobile from "../assets/images/hero-mobile.png";
 
 import logoBadge from "../assets/images/logo.png";
 import madeInEstoniaBadge from "../assets/images/madeinestonia-pl.png";
@@ -78,25 +79,30 @@ function EeHomePage() {
   return (
     <>
       <section className="home-hero">
-        <div className="home-hero__image" aria-hidden="true">
-          <img src={heroMain} alt="" />
-        </div>
+        <div className="home-hero__image home-hero__image--desktop" aria-hidden="true">
+  <img src={heroMain} alt="Robot" />
+</div>
+
+<div className="home-hero__image home-hero__image--mobile" aria-hidden="true">
+  <img src={heroMobile} alt="Robot" />
+</div>
 
         <div className="container home-hero__inner">
           <div className="home-hero__content">
             <p className="home-hero__kicker">
-              SDE · Kohandatud tarkvara · SaaS · CRM · AI-automaatika
-            </p>
+  SDE · Kohandatud SaaS · CRM · Automatiseerimine · AI · Maksed
+</p>
 
-            <h1>Kaasaegsetele ettevõtetele kohandatud IT-süsteemid</h1>
+<h1>IT-süsteemid, mis automatiseerivad ettevõtte igapäevatööd</h1>
 
-            <p className="home-hero__text">
-              Loome kohandatud SaaS-süsteeme, CRM-lahendusi, halduspaneele,
-              protsesside automatiseerimist, dokumendigeneraatoreid ja
-              praktilisi AI-integratsioone, mis on ehitatud teie ettevõtte
-              tegeliku tööviisi ümber. Meie eesmärk on toetada ettevõtete kasvu
-              tehnoloogiaga, mis päriselt töötab.
-            </p>
+<p className="home-hero__text">
+  Loome SaaS-platvorme, CRM-süsteeme, halduspaneele, automaatseid
+  e-posti süsteeme, makselahenduste integratsioone, veebivorme,
+  dokumendigeneraatoreid, aruandlusvaateid, andmebaase ja praktilisi
+  AI-lahendusi. SDE loob tööriistu, mis korrastavad protsesse, vähendavad
+  käsitsi tehtavat tööd ja toetavad ettevõtte igapäevast toimimist ühes
+  selges süsteemis.
+</p>
 
             <div className="home-hero__actions">
               <Link

@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 
 import heroMain from "../assets/images/hero-main.png";
+import heroMobile from "../assets/images/hero-mobile.png";
 
 import logoBadge from "../assets/images/logo.png";
 import madeInEstoniaBadge from "../assets/images/madeinestonia-en.png";
@@ -78,25 +79,29 @@ function EnHomePage() {
   return (
     <>
       <section className="home-hero">
-        <div className="home-hero__image" aria-hidden="true">
-          <img src={heroMain} alt="" />
-        </div>
+        <div className="home-hero__image home-hero__image--desktop" aria-hidden="true">
+  <img src={heroMain} alt="Robot" />
+</div>
+
+<div className="home-hero__image home-hero__image--mobile" aria-hidden="true">
+  <img src={heroMobile} alt="Robot" />
+</div>
 
         <div className="container home-hero__inner">
           <div className="home-hero__content">
             <p className="home-hero__kicker">
-              SDE · Custom Software · SaaS · CRM · AI Automation
-            </p>
+  SDE · Custom SaaS · CRM · Automation · AI · Payments
+</p>
 
-            <h1>Custom business systems for modern companies</h1>
+<h1>IT systems that automate everyday business work</h1>
 
-            <p className="home-hero__text">
-              We build custom SaaS platforms, CRM systems, admin panels,
-              process automation tools, document generators and practical AI
-              integrations tailored to the way your company actually works. Our
-              mission is to support business growth through technology that is
-              useful, structured and built for real workflows.
-            </p>
+<p className="home-hero__text">
+  We design SaaS platforms, CRM systems, admin panels, automated email systems,
+  payment integrations, online forms, document generators, dashboards,
+  databases and practical AI implementations. SDE builds tools that organize
+  processes, reduce manual work and support daily business operations within
+  one coherent system.
+</p>
 
             <div className="home-hero__actions">
               <Link
