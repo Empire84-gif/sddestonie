@@ -6,10 +6,10 @@ import heroMain from "../assets/images/hero-main.png";
 import heroMobile from "../assets/images/hero-mobile.png";
 
 import logoBadge from "../assets/images/logo.png";
-import madeInEstoniaBadge from "../assets/images/madeinestonia-pl.png";
-import saasBadge from "../assets/images/saas-pl.png";
-import aiReadyBadge from "../assets/images/aiready-pl.png";
-import supportBadge from "../assets/images/support-pl.png";
+import madeInEstoniaBadge from "../assets/images/madeinestonia-ee.png";
+import saasBadge from "../assets/images/saas-ee.png";
+import aiReadyBadge from "../assets/images/aiready-ee.png";
+import supportBadge from "../assets/images/support-ee.png";
 import europeanQualityBadge from "../assets/images/europeanquality.png";
 
 import EeAboutSection from "../components/sections/EeAboutSection.jsx";

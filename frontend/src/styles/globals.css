@@ -5961,7 +5961,7 @@ body.animations-ready .service-row.from-right.is-visible {
 }
 
 .services-final-cta-section h2 {
-  max-width: 760px;
+  max-width: 860px;
   margin: 0 auto;
   font-size: clamp(24.3px, 2.88vw, 43.2px);
   line-height: 1.02;
@@ -8581,15 +8581,3 @@ body.mobile-menu-open .scroll-to-top {
   color: #ffffff !important;
 }
 
-/* Optional: numbered process circles that were navy */
-.implementation-process-step > span {
-  background: var(--sde-action-blue) !important;
-  color: #ffffff !important;
-}
-
-/* Optional: cards that turned navy on hover */
-.why-card:hover,
-.service-detail-grid article:hover {
-  background: var(--sde-action-blue) !important;
-  border-color: var(--sde-action-blue) !important;
-}
