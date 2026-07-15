@@ -1,53 +1,45 @@
 import founderImage from "../../assets/images/founder-image.png";
 
-export default function FounderSection() {
+export default function EnFounderSection() {
   return (
     <section className="founder-section">
       <div className="container founder-section__inner">
         <div className="founder-section__content">
-          <p className="founder-section__kicker">Kilka słów ode mnie</p>
+          <p className="founder-section__kicker">O założycielu</p>
 
           <h2 className="founder-section__title">
-  Technologia zaczyna się od zrozumienia człowieka i procesu.
-</h2>
+            Tworzę praktyczne rozwiązania cyfrowe odpowiadające na realne
+            potrzeby firm.
+          </h2>
 
-<div className="founder-section__text">
-  <p>
-  Nazywam się Karl Sebastian Handke i jestem założycielem Handke Holding OÜ —
-  estońskiej spółki, w ramach której rozwijam dwa kierunki działalności:
-  Solutions Digitales d’Estonie jako markę technologiczną specjalizującą się
-  w rozwiązaniach IT oraz Hansa Careers jako markę wspierającą firmy
-  w obszarze pośrednictwa pracy na terenie EU/EEA.
-</p>
+          <div className="founder-section__text">
+            <p>
+              Nazywam się Karl Sebastian Handke i jestem założycielem Handke
+              Holding OÜ. Pod marką SDE projektuję i rozwijam dopasowane
+              rozwiązania IT, które pomagają firmom upraszczać codzienną pracę,
+              zwiększać efektywność oraz lepiej kontrolować procesy biznesowe.
+            </p>
 
-  <p>
-    W SDE łączę perspektywę przedsiębiorcy i programisty. Specjalizuję się
-    w automatyzacji procesów, projektowaniu systemów CRM, aplikacji SaaS oraz
-    wdrażaniu rozwiązań AI tam, gdzie realnie mogą usprawnić pracę firmy.
-  </p>
+            <p>
+              Specjalizuję się w automatyzacji procesów biznesowych, systemach
+              CRM, aplikacjach internetowych, narzędziach opartych na sztucznej
+              inteligencji oraz integracjach istniejących platform, usług i
+              źródeł danych.
+            </p>
 
- <p>
-  Pracuję głównie w Pythonie, React oraz Next.js, rozwijając zaplecze o Flask,
-  Node.js, bazy danych SQL/PostgreSQL, integracje API oraz rozwiązania oparte
-  o OpenAI API. Technologia jest jednak tylko narzędziem — kluczowe jest
-  zrozumienie, gdzie firma traci czas, gdzie powstaje chaos i które procesy
-  można uporządkować, uprościć lub zautomatyzować.
-</p>
+            <p>
+              Do każdego projektu podchodzę zarówno z perspektywy biznesowej,
+              jak i technicznej. Przed rozpoczęciem prac analizuję sposób
+              działania firmy, identyfikuję obszary, w których tracony jest czas,
+              oraz procesy, które można lepiej uporządkować lub zautomatyzować.
+            </p>
 
-  <p>
-    Preferuję budowanie rozwiązań od podstaw — od interfejsu i doświadczenia
-    użytkownika, przez backend, logikę systemu, integracje, aż po przepływ danych.
-    Dzięki temu każdy projekt może być dopasowany do sposobu pracy konkretnej
-    firmy, a nie odwrotnie.
-  </p>
-
- <p>
-  Stale rozwijam swoje kompetencje programistyczne; obecnie poszerzam wiedzę
-  w zakresie C++, aby projektować jeszcze bardziej zaawansowane technologicznie
-  rozwiązania — wydajne, stabilne i gotowe na większą skalę. Jeśli Twoja firma
-  chce pracować szybciej, mądrzej i z większą kontrolą — zapraszam do współpracy.
-</p>
-</div>
+            <p>
+              Od interfejsu użytkownika i zaplecza aplikacji, przez logikę
+              systemu, aż po integracje — tworzę przejrzyste i niezawodne
+              rozwiązania dostosowane do indywidualnych potrzeb każdej firmy.
+            </p>
+          </div>
         </div>
 
         <div className="founder-section__image" aria-hidden="true">
