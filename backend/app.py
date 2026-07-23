@@ -72,6 +72,73 @@ LANGUAGE_LABELS = {
     "ee": "Estonian",
 }
 
+AI_API_MESSAGES = {
+    "pl": {
+        "missing_messages": "Brak wiadomości do przetworzenia.",
+        "invalid_last_message": "Ostatnia wiadomość musi pochodzić od użytkownika.",
+        "empty_response": (
+            "Nie udało mi się przygotować odpowiedzi. "
+            "Spróbuj opisać proces jeszcze raz, możliwie konkretnie."
+        ),
+        "service_unavailable": (
+            "Carlos AI jest chwilowo niedostępny. "
+            "Spróbuj ponownie za chwilę albo skorzystaj z formularza kontaktowego."
+        ),
+    },
+    "en": {
+        "missing_messages": "There are no messages to process.",
+        "invalid_last_message": "The most recent message must come from the user.",
+        "empty_response": (
+            "I could not prepare a response. "
+            "Please describe the process again and include as much relevant detail as possible."
+        ),
+        "service_unavailable": (
+            "Carlos AI is temporarily unavailable. "
+            "Please try again shortly or use the contact form."
+        ),
+    },
+    "ee": {
+        "missing_messages": "Töötlemiseks puuduvad sõnumid.",
+        "invalid_last_message": "Viimane sõnum peab pärinema kasutajalt.",
+        "empty_response": (
+            "Vastust ei õnnestunud koostada. "
+            "Palun kirjeldage protsessi uuesti ja võimalikult täpselt."
+        ),
+        "service_unavailable": (
+            "Carlos AI ei ole hetkel saadaval. "
+            "Proovige mõne aja pärast uuesti või kasutage kontaktivormi."
+        ),
+    },
+}
+
+
+def normalize_interface_language(value: Any) -> str:
+    if not isinstance(value, str):
+        return "en"
+
+    normalized = value.strip().lower()
+
+    aliases = {
+        "et": "ee",
+        "est": "ee",
+        "estonian": "ee",
+        "eng": "en",
+        "english": "en",
+        "pol": "pl",
+        "polish": "pl",
+    }
+
+    normalized = aliases.get(normalized, normalized)
+    return normalized if normalized in LANGUAGE_LABELS else "en"
+
+
+def ai_api_message(interface_language: str, key: str) -> str:
+    messages = AI_API_MESSAGES.get(
+        interface_language,
+        AI_API_MESSAGES["en"],
+    )
+    return messages[key]
+
 
 def get_client() -> OpenAI:
     api_key = os.getenv("OPENAI_API_KEY")
@@ -82,45 +149,72 @@ def get_client() -> OpenAI:
     return OpenAI(api_key=api_key)
 
 
-def build_system_instructions(language: str = "pl") -> str:
-    return """
-Jesteś Carlos AI — profesjonalnym asystentem projektowym marki SDE, czyli Solutions Digitales d’Estonie.
+def build_system_instructions(interface_language: str = "en") -> str:
+    fallback_language = LANGUAGE_LABELS.get(
+        interface_language,
+        LANGUAGE_LABELS["en"],
+    )
 
-SDE tworzy dedykowane systemy biznesowe:
-- CRM,
-- SaaS,
-- automatyzacje procesów,
-- formularze online,
-- generatory PDF i dokumentów,
-- dashboardy i raporty,
-- integracje API,
-- systemy komunikacji z klientami,
-- rozwiązania AI w realnym workflow firmy.
+    return f"""
+You are Carlos AI, the professional project assistant for SDE
+(Solutions Digitales d’Estonie).
 
-Twoja rola:
-1. Pomagasz użytkownikowi zrozumieć, jaki system może usprawnić jego firmę.
-2. Zadajesz krótkie, trafne pytania, jeżeli opis jest zbyt ogólny.
-3. Klasyfikujesz problem jako CRM, SaaS, automatyzacja, dokumenty/PDF, dashboard, API, komunikacja, AI workflow albo analiza procesu.
-4. Odpowiadasz spokojnie, konkretnie i premium.
-5. Nie używasz przesadnego marketingu.
-6. Nie udajesz człowieka.
-7. Nie obiecujesz konkretnej ceny ani konkretnego terminu bez analizy.
-8. Nie tworzysz fałszywych realizacji ani nazw klientów.
-9. Nie piszesz długich esejów — odpowiedzi mają być krótkie, eleganckie i biznesowe.
-10. Jeżeli użytkownik opisze proces, zaproponuj sensowny kierunek systemu i 2–4 pytania doprecyzowujące.
-11. Jeżeli rozmowa naturalnie zmierza do kontaktu, zaproponuj formularz „Opisz projekt” albo szybki kontakt z SDE.
+SDE develops custom business systems, including:
+- CRM systems,
+- SaaS platforms,
+- process automation,
+- online forms,
+- PDF and document generators,
+- dashboards and reports,
+- API integrations,
+- customer communication systems,
+- AI solutions integrated into real business workflows.
 
-Styl:
-- język polski,
-- ton profesjonalny,
-- bez emoji,
-- bez nachalnej sprzedaży,
-- bez zwrotów typu „super”, „świetnie”, „hejka”,
-- krótkie akapity,
-- maksymalnie konkretne rekomendacje.
+YOUR ROLE:
+1. Help the user understand what kind of system could improve their business.
+2. Ask short, relevant questions when the user's description is too general.
+3. Identify whether the problem concerns CRM, SaaS, automation,
+   documents or PDFs, dashboards, APIs, communication, AI workflows
+   or process analysis.
+4. Respond calmly, professionally and precisely.
+5. Do not use exaggerated marketing language.
+6. Never pretend to be a human.
+7. Do not promise a specific price or deadline without proper analysis.
+8. Do not invent projects, clients, case studies or business facts.
+9. Keep responses concise, elegant and focused on practical business value.
+10. When the user describes a process, suggest a suitable direction
+    and ask two to four relevant follow-up questions.
+11. When appropriate, suggest the "Describe your project" form
+    or direct contact with SDE.
 
-Przykładowy styl odpowiedzi:
-„Z opisu wynika, że najbardziej pasowałby dedykowany CRM z modułem dokumentów i dashboardem statusów. Najpierw warto ustalić, skąd trafiają dane, kto pracuje na procesie i jakie dokumenty są generowane najczęściej.”
+LANGUAGE POLICY:
+- Respond in the language of the user's most recent message.
+- Detect the response language from that message itself, not from
+  the website interface language or earlier messages.
+- If the user changes language, immediately continue in the new language.
+- If the user explicitly asks for a reply or translation in another language,
+  follow that request.
+- When the most recent message contains more than one language, use
+  the clearly dominant language.
+- Names, email addresses, URLs, code, product names, numbers and isolated
+  neutral words are not reliable evidence of a language.
+- If the language cannot be determined reliably, ask the user which language
+  they would prefer to use. Ask this brief clarification in the fallback
+  interface language.
+- The website interface language is only a fallback for that clarification.
+- The current fallback interface language is {fallback_language}.
+- Never force Polish, English or Estonian when the user's latest message
+  clearly uses a different language.
+- Do not mention language detection unless clarification is necessary.
+
+STYLE:
+- professional and precise,
+- concise,
+- no emoji,
+- no aggressive sales language,
+- no empty praise or overly casual greetings,
+- short paragraphs,
+- specific and practical recommendations.
 """.strip()
 
 
@@ -443,33 +537,52 @@ def project_request():
 
 @app.post("/api/ai-assistant/chat")
 def ai_assistant_chat():
-    data = request.get_json(silent=True) or {}
+    data = get_json_data()
 
     messages = clean_messages(data.get("messages"))
-    language = data.get("language", "pl")
+    interface_language = normalize_interface_language(
+        data.get(
+            "interfaceLanguage",
+            data.get("language", "en"),
+        )
+    )
 
     if not messages:
-        return jsonify({"error": "Brak wiadomości do przetworzenia."}), 400
+        return jsonify(
+            {
+                "error": ai_api_message(
+                    interface_language,
+                    "missing_messages",
+                )
+            }
+        ), 400
 
     if messages[-1]["role"] != "user":
-        return jsonify({"error": "Ostatnia wiadomość musi pochodzić od użytkownika."}), 400
+        return jsonify(
+            {
+                "error": ai_api_message(
+                    interface_language,
+                    "invalid_last_message",
+                )
+            }
+        ), 400
 
     try:
         client = get_client()
 
         response = client.responses.create(
             model=OPENAI_MODEL,
-            instructions=build_system_instructions(language),
+            instructions=build_system_instructions(interface_language),
             input=messages,
             max_output_tokens=520,
         )
 
-        answer = response.output_text.strip()
+        answer = (response.output_text or "").strip()
 
         if not answer:
-            answer = (
-                "Nie udało mi się przygotować odpowiedzi. "
-                "Spróbuj opisać proces jeszcze raz, możliwie konkretnie."
+            answer = ai_api_message(
+                interface_language,
+                "empty_response",
             )
 
         return jsonify(
@@ -483,9 +596,9 @@ def ai_assistant_chat():
 
         return jsonify(
             {
-                "error": (
-                    "Carlos AI jest chwilowo niedostępny. "
-                    "Spróbuj ponownie za chwilę albo skorzystaj z formularza kontaktowego."
+                "error": ai_api_message(
+                    interface_language,
+                    "service_unavailable",
                 )
             }
         ), 500
