@@ -656,12 +656,12 @@ body.sde-ai-open {
   .sde-ai-panel {
     left: 8px !important;
     right: 8px !important;
-    top: 8svh !important;
+    top: 8dvh !important;
     bottom: 10px !important;
 
     width: auto !important;
     height: auto !important;
-    max-height: calc(100svh - 8svh - 10px) !important;
+    max-height: calc(100dvh - 8dvh - 10px) !important;
 
     border-radius: 22px !important;
 
@@ -754,8 +754,15 @@ body.sde-ai-open {
   }
 
   .sde-ai-composer textarea {
+    min-width: 0;
     max-height: 90px;
-    font-size: 12.7px;
+    /*
+      iOS Safari automatically zooms focused form controls whose text is
+      smaller than 16px. Keep this at 16px on mobile even if the rest of the
+      interface uses smaller typography.
+    */
+    font-size: 16px !important;
+    line-height: 1.35;
   }
 }
 
@@ -763,10 +770,10 @@ body.sde-ai-open {
   .sde-ai-panel {
     left: 7px !important;
     right: 7px !important;
-    top: 7svh !important;
+    top: 7dvh !important;
     bottom: 9px !important;
 
-    max-height: calc(100svh - 7svh - 9px) !important;
+    max-height: calc(100dvh - 7dvh - 9px) !important;
     border-radius: 21px !important;
   }
 
@@ -807,17 +814,42 @@ body.sde-ai-open {
 
 @media (max-width: 760px) {
   .sde-ai-panel {
-    top: 4svh !important;
+    top: 4dvh !important;
     bottom: 8px !important;
-    max-height: calc(100svh - 4svh - 8px) !important;
+    max-height: calc(100dvh - 4dvh - 8px) !important;
   }
 }
 
 @media (max-width: 420px) {
   .sde-ai-panel {
-    top: 3svh !important;
+    top: 3dvh !important;
     bottom: 8px !important;
-    max-height: calc(100svh - 3svh - 8px) !important;
+    max-height: calc(100dvh - 3dvh - 8px) !important;
+  }
+}
+
+/* =========================================================
+   CARLOS AI — STABLE MOBILE SCALE
+   Prevent automatic focus/double-tap zoom on smartphones
+========================================================= */
+
+@media (max-width: 760px), (hover: none) and (pointer: coarse) {
+  .sde-ai-panel {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  .sde-ai-composer textarea {
+    min-width: 0 !important;
+    font-size: 16px !important;
+  }
+
+  .sde-ai-launcher,
+  .sde-ai-panel__close,
+  .sde-ai-quick-prompts button,
+  .sde-ai-chat__links button,
+  .sde-ai-composer button {
+    touch-action: manipulation;
   }
 }
 
